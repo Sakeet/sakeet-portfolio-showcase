@@ -10,7 +10,7 @@ export const profile = {
   availability: "Open to Full-Time & Internship Opportunities",
   email: "sakeetkopparapu332@gmail.com",
   location: "Plano, TX (open to relocate)",
-  linkedin: "https://linkedin.com/in/kopparapu-sakeet",
+  linkedin: "https://www.linkedin.com/in/kopparapu-sakeet/",
   github: "https://github.com/Sakeet",
   medium: "https://medium.com/@sakeetkopparapu",
   resume: RESUME_URL,
