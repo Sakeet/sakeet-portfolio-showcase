@@ -376,6 +376,8 @@ export const skillGroups = [
       "Sigma Computing",
       "Dashboard Design",
       "Data Visualization",
+      "Word",
+      "PowerPoint",
     ],
   },
   {
