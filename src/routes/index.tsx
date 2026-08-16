@@ -62,6 +62,7 @@ function Index() {
         <About />
         <Experience />
         <Projects />
+        <Research />
         <Skills />
         <Achievements />
         <Leadership />
