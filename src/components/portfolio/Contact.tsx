@@ -18,13 +18,14 @@ const details = [
 
 export function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  type FieldErrors = { name?: string; email?: string; subject?: string; message?: string };
+  const [errors, setErrors] = useState<FieldErrors>({});
 
-  const update = (key: string, value: string) => setForm((f) => ({ ...f, [key]: value }));
+  const update = (key: keyof typeof form, value: string) => setForm((f) => ({ ...f, [key]: value }));
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const next: Record<string, string> = {};
+    const next: FieldErrors = {};
     if (form.name.trim().length < 2) next.name = "Please enter your name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) next.email = "Enter a valid email.";
     if (form.subject.trim().length < 3) next.subject = "Add a short subject.";
