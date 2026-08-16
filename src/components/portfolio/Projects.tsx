@@ -311,7 +311,7 @@ export function Projects() {
 
       <Reveal className="mt-12 text-center">
         <Button size="lg" variant="outline" asChild>
-          <a href={profile.github} target="_blank" rel="noopener noreferrer">
+          <a href={profile.github} target="_blank" rel="noreferrer">
             View all 18 repositories on GitHub <ArrowUpRight className="size-4" />
           </a>
         </Button>

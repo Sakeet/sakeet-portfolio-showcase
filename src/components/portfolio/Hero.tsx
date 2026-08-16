@@ -127,7 +127,7 @@ export function Hero() {
                 <a
                   href={href}
                   target={href.startsWith("mailto") ? undefined : "_blank"}
-                  rel="noopener noreferrer"
+                  rel="noreferrer"
                   aria-label={label}
                   className="glass glow-hover flex size-10 items-center justify-center rounded-full text-muted-foreground hover:text-primary"
                 >
