@@ -1,7 +1,7 @@
 import { BookOpen, ExternalLink, Presentation, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal, SectionHeading } from "./Reveal";
-import { researchEntries, type ResearchEntry } from "@/data/portfolio";
+import { researchEntries, type ResearchEntry, type ResearchAuthor } from "@/data/portfolio";
 
 const iconByType: Record<ResearchEntry["type"], typeof BookOpen> = {
   Publication: BookOpen,
@@ -9,7 +9,7 @@ const iconByType: Record<ResearchEntry["type"], typeof BookOpen> = {
   "Showcase Selection": Sparkles,
 };
 
-function AuthorList({ authors }: { authors?: { name: string; isMe?: boolean }[] }) {
+function AuthorList({ authors }: { authors?: ResearchAuthor[] | undefined }) {
   if (!authors || authors.length === 0) return null;
   return (
     <p className="mt-1 text-sm text-muted-foreground">
