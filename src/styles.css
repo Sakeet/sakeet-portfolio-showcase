@@ -200,9 +200,8 @@
 @utility mesh-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px) saturate(140%);
-  opacity: 0.5;
-  mix-blend-mode: screen;
+  filter: blur(70px) saturate(150%);
+  opacity: 0.55;
   animation: mesh-drift 22s ease-in-out infinite;
   will-change: transform;
 }
@@ -224,7 +223,7 @@
 
 @utility mesh-aurora {
   position: absolute;
-  inset: -30%;
+  inset: -25%;
   background: conic-gradient(
     from 0deg,
     color-mix(in oklab, var(--teal) 60%, transparent),
@@ -233,7 +232,8 @@
     transparent 75%,
     color-mix(in oklab, var(--teal) 60%, transparent)
   );
-  filter: blur(90px);
+  filter: blur(70px);
+  opacity: 0.35;
   animation: aurora-sweep 28s linear infinite;
   will-change: transform;
 }
