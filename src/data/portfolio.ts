@@ -174,6 +174,8 @@ export const projectCategories = [
 export type CaseStudy = {
   problem: string;
   approach: string[];
+  /** "What I Owned" — leave empty to hide the section in the case study modal. */
+  owned: string[];
   outcome: string[];
 };
 
