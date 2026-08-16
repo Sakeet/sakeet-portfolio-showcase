@@ -17,11 +17,11 @@ const HIGHLIGHTED_PHRASE =
 
 function HighlightedParagraph({ text }: { text: string }) {
   const idx = text.indexOf(HIGHLIGHTED_PHRASE);
-  if (idx === -1) return <p>{text}</p>;
+  if (idx === -1) return <p className="text-base leading-relaxed text-muted-foreground">{text}</p>;
   const before = text.slice(0, idx);
   const after = text.slice(idx + HIGHLIGHTED_PHRASE.length);
   return (
-    <p>
+    <p className="text-base leading-relaxed text-muted-foreground">
       {before}
       <span className="gradient-text font-medium">{HIGHLIGHTED_PHRASE}</span>
       {after}
