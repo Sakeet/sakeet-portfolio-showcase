@@ -406,7 +406,7 @@ export const projects: Project[] = [
     ],
     impact: "Presented at the Southwest Decision Sciences Institute (SWDSI) 2026 Conference.",
     publishedResearch: true,
-    githubUrl: profile.github,
+    githubUrl: "",
     role: "Solo build",
     timeline: "Aug 2025 – May 2026",
     caseStudy: {
