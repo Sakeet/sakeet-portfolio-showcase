@@ -244,6 +244,13 @@ export function Projects() {
                       <Github className="size-3.5" /> View on GitHub
                     </a>
                   </Button>
+                  {project.paperUrl ? (
+                    <Button size="sm" variant="outline" asChild onClick={(e) => e.stopPropagation()}>
+                      <a href={project.paperUrl} target="_blank" rel="noopener noreferrer">
+                        <BookOpen className="size-3.5" /> Read the Paper
+                      </a>
+                    </Button>
+                  ) : null}
                 </div>
 
                 <span className="mt-5 inline-flex items-center gap-1.5 pt-2 text-sm font-medium text-primary">
