@@ -2,8 +2,9 @@ import {
   BarChart3,
   Brain,
   Briefcase,
-  Code2,
+  Cloud,
   Database,
+  LineChart,
   Server,
   type LucideIcon,
 } from "lucide-react";
@@ -15,7 +16,8 @@ const icons: Record<string, LucideIcon> = {
   database: Database,
   chart: BarChart3,
   server: Server,
-  code: Code2,
+  "line-chart": LineChart,
+  cloud: Cloud,
   briefcase: Briefcase,
 };
 
@@ -28,12 +30,12 @@ export function Skills() {
         subtitle="Modeling and generative AI on top, pipelines and data quality underneath, business analysis holding it together."
       />
 
-      <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
         {skillGroups.map((group, i) => {
-          const Icon = icons[group.icon] ?? Code2;
+          const Icon = icons[group.icon] ?? Brain;
           return (
-            <Reveal key={group.title} delay={(i % 3) * 0.08}>
-              <div className="glass glow-hover h-full rounded-2xl p-5 sm:p-6">
+            <Reveal key={group.title} delay={(i % 2) * 0.08}>
+              <div className="glass glow-hover rounded-2xl p-5 sm:p-6">
                 <div className="flex items-center gap-3">
                   <span className="gradient-bg flex size-9 items-center justify-center rounded-lg">
                     <Icon className="size-4 text-primary-foreground" />
