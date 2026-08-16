@@ -52,8 +52,27 @@ export const stats = [
   { value: 100, suffix: "K+", label: "records processed weekly" },
   { value: 200, suffix: "+", label: "students taught as TA" },
   { value: 10, suffix: "", label: "person team led" },
-  { value: 6, suffix: "", label: "hackathons and national competitions placed in" },
 ];
+
+export const researchHighlights = [
+  {
+    label: "Published",
+    subLabel: "Information Systems Student Research Journal, 2025",
+  },
+  {
+    label: "1 of 6 Worldwide",
+    subLabel: "\"Rising Stars in Data and AI,\" SAS Innovate 2026",
+  },
+  {
+    label: "Top 6 Nationwide",
+    subLabel: "HCA Healthcare Analytics Challenge",
+  },
+  {
+    label: "Conference Presenter",
+    subLabel: "SWDSI 2026",
+  },
+];
+
 
 export type Experience = {
   company: string;
