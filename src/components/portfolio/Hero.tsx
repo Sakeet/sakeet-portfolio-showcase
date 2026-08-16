@@ -13,7 +13,9 @@ function useTypewriter(words: string[]) {
   useEffect(() => {
     const word = words[index % words.length] ?? "";
     const done = text === word;
-    const delay = deleting ? 40 : done ? 1600 : 80;
+    // slight jitter so typing feels human rather than metronomic
+    const jitter = Math.random() * 55;
+    const delay = deleting ? 28 + jitter * 0.4 : done ? 1500 : 65 + jitter;
 
     const timer = setTimeout(() => {
       if (!deleting && done) {
@@ -48,7 +50,8 @@ export function Hero() {
   return (
     <section id="home" className="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="grid-pattern absolute inset-0 opacity-60" />
+        <div className="mesh-aurora" />
+        <div className="grid-pattern absolute inset-0 opacity-40 [mask-image:radial-gradient(70%_60%_at_50%_35%,black,transparent)]" />
         <div
           className="mesh-blob size-[28rem] -top-24 -left-20"
           style={{ background: "var(--teal)" }}
@@ -60,6 +63,10 @@ export function Hero() {
         <div
           className="mesh-blob size-[22rem] bottom-0 left-1/3"
           style={{ background: "var(--primary)", animationDelay: "-12s" }}
+        />
+        <div
+          className="mesh-blob size-[18rem] -bottom-20 right-1/4"
+          style={{ background: "var(--teal)", animationDelay: "-18s" }}
         />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background" />
       </div>
@@ -85,7 +92,7 @@ export function Hero() {
 
           <p className="mt-3 min-h-8 text-xl font-semibold sm:text-2xl">
             <span className="gradient-text">{role}</span>
-            <span className="ml-0.5 animate-pulse text-primary">|</span>
+            <span aria-hidden className="type-caret ml-1" />
           </p>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground/90">
