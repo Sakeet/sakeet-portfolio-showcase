@@ -260,11 +260,10 @@ export const projects: Project[] = [
     description:
       "Summary statistics and visualizations that optimized resource allocation, plus a functional website to make the solution accessible to end users.",
     tech: ["Python", "Pandas", "Data Visualization", "Statistical Analysis"],
-    impact: "Top 6 nationwide finalist out of 25+ university teams.",
-    award: true,
+    impact: "Top 6 internationally out of 25+ university teams.",
     githubUrl: profile.github,
     role: "Analytics lead",
-    timeline: "National case competition",
+    timeline: "International case competition",
     caseStudy: {
       problem:
         "HCA needed to understand what actually drives clinician burnout and attrition across a very large, deidentified workforce dataset.",
@@ -275,7 +274,7 @@ export const projects: Project[] = [
       ],
       outcome: [
         "Recommendations that optimized resource allocation across staffing decisions.",
-        "Top 6 nationwide finalist out of 25+ university teams.",
+        "Top 6 internationally out of 25+ university teams.",
       ],
     },
   },
