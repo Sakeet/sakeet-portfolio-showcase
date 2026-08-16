@@ -189,9 +189,16 @@ export function Projects() {
             transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
             className="glass glow-hover relative overflow-hidden rounded-2xl"
           >
-            <button
-              type="button"
+            <div
+              role="button"
+              tabIndex={0}
               onClick={() => setActive(project)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setActive(project);
+                }
+              }}
               aria-label={`Open case study: ${project.title}`}
               className="flex h-full w-full cursor-pointer flex-col text-left focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
             >
@@ -219,11 +226,24 @@ export function Projects() {
 
                 <p className="mt-4 text-sm font-medium text-primary">{project.impact}</p>
 
-                <span className="mt-6 inline-flex items-center gap-1.5 pt-2 text-sm font-medium text-primary">
+                <div className="mt-5 flex flex-wrap items-center gap-2">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    asChild
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Github className="size-3.5" /> View on GitHub
+                    </a>
+                  </Button>
+                </div>
+
+                <span className="mt-5 inline-flex items-center gap-1.5 pt-2 text-sm font-medium text-primary">
                   Read case study <ArrowUpRight className="size-3.5" />
                 </span>
               </div>
-            </button>
+            </div>
           </motion.article>
         ))}
       </div>
