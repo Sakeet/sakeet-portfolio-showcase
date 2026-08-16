@@ -126,15 +126,16 @@ export function About() {
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           {stats.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 0.08}>
-              <div className="text-center sm:px-6 lg:px-10">
-                <p className="text-2xl font-bold text-foreground sm:text-3xl lg:text-[1.75rem]">
+            <div className="text-center sm:px-6 lg:px-10">
+                <p className="text-xl font-bold text-foreground/90 sm:text-2xl lg:text-xl">
                   <Counter value={stat.value} />
                   {stat.suffix}
                 </p>
-                <p className="mt-1 text-xs leading-relaxed text-muted-foreground/80 sm:text-sm">
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground/70 sm:text-sm">
                   {stat.label}
                 </p>
               </div>
+
             </Reveal>
           ))}
         </div>
