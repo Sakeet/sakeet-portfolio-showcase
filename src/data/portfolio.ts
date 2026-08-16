@@ -147,6 +147,12 @@ export const projectCategories = [
   "Data Engineering",
 ] as const;
 
+export type CaseStudy = {
+  problem: string;
+  approach: string[];
+  outcome: string[];
+};
+
 export type Project = {
   title: string;
   category: (typeof projectCategories)[number];
@@ -156,6 +162,9 @@ export type Project = {
   impact: string;
   award?: boolean;
   github?: string;
+  role?: string;
+  timeline?: string;
+  caseStudy: CaseStudy;
 };
 
 export const projects: Project[] = [
@@ -168,6 +177,22 @@ export const projects: Project[] = [
     tech: ["Python", "Whisper", "SeamlessM4T", "Audio Pipelines", "On-Prem Deployment"],
     impact: "Production-ready in 8 weeks with a 5-person team.",
     github: profile.github,
+    role: "AI Engineer, 5-person team",
+    timeline: "8 weeks",
+    caseStudy: {
+      problem:
+        "911 dispatchers lose critical minutes when a caller does not speak English, and cloud translation services are off the table because emergency call audio cannot leave the premises.",
+      approach: [
+        "Routed live call audio through a virtual audio device so both caller and dispatcher streams could be captured without changing existing telephony hardware.",
+        "Ran OpenAI Whisper for streaming transcription and Meta SeamlessM4T for bidirectional speech translation, fully on-premise.",
+        "Tuned chunking and buffering so translated speech comes back fast enough to hold a natural back-and-forth conversation.",
+      ],
+      outcome: [
+        "Production-ready system delivered in 8 weeks with a 5-person team.",
+        "Zero network dependency — no call data ever leaves the dispatch center.",
+        "Bidirectional translation lets dispatchers keep control of the call instead of waiting on a human interpreter.",
+      ],
+    },
   },
   {
     title: "Frontline Forecast — Hospital Length-of-Stay Prediction",
@@ -180,6 +205,21 @@ export const projects: Project[] = [
       "1 of 6 teams worldwide selected for the \u201cRising Stars in Data and AI\u201d showcase at SAS Innovate 2026.",
     award: true,
     github: profile.github,
+    role: "Data Scientist",
+    timeline: "Competition project",
+    caseStudy: {
+      problem:
+        "Hospitals cannot plan capacity without knowing how long patients will stay, so beds sit blocked while admissions queue up.",
+      approach: [
+        "Cleaned and modeled a 101,766-row dataset covering 130 hospitals in SQL before feature engineering.",
+        "Built and compared predictive models in SAS Viya, evaluating on clinically meaningful error rather than raw accuracy.",
+        "Ran what-if simulations on discharge timing to translate model output into bed-capacity language administrators use.",
+      ],
+      outcome: [
+        "Simulations showed that discharging 10% of patients one day earlier frees 8–12 beds per day.",
+        "Selected as 1 of 6 teams worldwide for the “Rising Stars in Data and AI” showcase at SAS Innovate 2026.",
+      ],
+    },
   },
   {
     title: "SURAKSHA — AI-Driven IT Support & Task Automation",
@@ -192,6 +232,22 @@ export const projects: Project[] = [
       "2nd prize out of 25+ teams at the AIS 2025 Conference; self-healing mechanisms cut manual troubleshooting effort. Also a published paper.",
     award: true,
     github: profile.github,
+    role: "AI Engineer",
+    timeline: "Research project + published paper",
+    caseStudy: {
+      problem:
+        "IT teams burn hours on repetitive incidents — triaging tickets, checking monitors, and running the same remediation steps by hand.",
+      approach: [
+        "Built an LLM-driven chatbot that interprets natural-language incident reports and maps them to concrete IT workflows.",
+        "Integrated SolarWinds APIs so the agent can read live monitoring state and execute remediation autonomously.",
+        "Added self-healing routines for known failure classes, with ticket creation and updates handled end-to-end.",
+      ],
+      outcome: [
+        "2nd prize out of 25+ teams at the AIS 2025 Conference.",
+        "Self-healing mechanisms measurably cut manual troubleshooting effort.",
+        "Work published as “SURAKSHA: AI-Driven IT Support and Automation.”",
+      ],
+    },
   },
   {
     title: "HCA Healthcare Resilience Platform",
@@ -203,6 +259,21 @@ export const projects: Project[] = [
     impact: "Top 6 nationwide finalist out of 25+ university teams.",
     award: true,
     github: profile.github,
+    role: "Analytics lead",
+    timeline: "National case competition",
+    caseStudy: {
+      problem:
+        "HCA needed to understand what actually drives clinician burnout and attrition across a very large, deidentified workforce dataset.",
+      approach: [
+        "Explored 200,000+ rows of deidentified employee data in Python and Pandas, profiling data quality before drawing conclusions.",
+        "Formulated and statistically validated hypotheses about workload, scheduling, and resilience indicators.",
+        "Packaged findings as summary statistics and visualizations, then shipped a functional website so non-analysts could use them.",
+      ],
+      outcome: [
+        "Recommendations that optimized resource allocation across staffing decisions.",
+        "Top 6 nationwide finalist out of 25+ university teams.",
+      ],
+    },
   },
   {
     title: "PEAR — AI Founder–Investor Matching Platform",
@@ -214,6 +285,22 @@ export const projects: Project[] = [
     impact: "3rd place out of 18 teams.",
     award: true,
     github: profile.github,
+    role: "Data & backend architecture",
+    timeline: "5-week hackathon",
+    caseThatDoesNotExist: undefined as never,
+    caseStudy: {
+      problem:
+        "Early-stage founders and investors waste cycles on mismatched intros because there is no structured signal connecting thesis, stage, and sector.",
+      approach: [
+        "Designed the database schema and data model for founder, investor, and deal-thesis entities.",
+        "Built an LLM-assisted matching pipeline that scores fit on structured attributes plus narrative signals.",
+        "Iterated on ranking through structured evaluation workflows and repeated relevance testing.",
+      ],
+      outcome: [
+        "Noticeably higher recommendation relevance versus the naive attribute-only baseline.",
+        "3rd place out of 18 teams.",
+      ],
+    },
   },
   {
     title: "AI Voice Agent — Missed Call Prioritization",
@@ -224,6 +311,21 @@ export const projects: Project[] = [
     tech: ["Python", "SQL", "Voice AI", "Google Sheets API"],
     impact: "End-to-end product from data capture to user-facing reporting.",
     github: profile.github,
+    role: "Solo build",
+    timeline: "Side project",
+    caseStudy: {
+      problem:
+        "Small service businesses miss calls all day and have no way to tell which missed callers were ready to buy and which can wait.",
+      approach: [
+        "Captured missed-call events and transcripts, then classified caller intent and urgency with a voice-AI pipeline.",
+        "Stored structured call outcomes in SQL so triage decisions are auditable, not one-off.",
+        "Pushed results into a centralized Google Sheets layer that acts as a lightweight BI dashboard for non-technical owners.",
+      ],
+      outcome: [
+        "Owners get a ranked callback list instead of an undifferentiated missed-call log.",
+        "End-to-end product from data capture through user-facing reporting.",
+      ],
+    },
   },
   {
     title: "Enterprise Workforce Data Pipeline @ Capgemini",
@@ -233,6 +335,21 @@ export const projects: Project[] = [
     tech: ["SQL Server", "SSIS", "T-SQL", "ETL", "Data Validation"],
     impact: "100K+ records/week at 99%+ accuracy.",
     github: profile.github,
+    role: "Associate Consultant",
+    timeline: "14 months",
+    caseStudy: {
+      problem:
+        "Payroll and workforce reporting for 1,000+ employees depended on data spread across multiple enterprise systems with inconsistent definitions.",
+      approach: [
+        "Built SSIS ETL pipelines and T-SQL stored procedures to integrate and migrate employee data between systems.",
+        "Documented and validated source-to-target mappings so every field had a traceable origin.",
+        "Added data-quality checks at load time to catch breakage before it reached downstream reports.",
+      ],
+      outcome: [
+        "100K+ records processed weekly at 99%+ accuracy.",
+        "Accurate payroll and workforce reports delivered on a reliable weekly cadence.",
+      ],
+    },
   },
 ];
 
