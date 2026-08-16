@@ -21,6 +21,7 @@ export const navLinks = [
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
+  { id: "research", label: "Research" },
   { id: "skills", label: "Skills" },
   { id: "achievements", label: "Achievements" },
   { id: "contact", label: "Contact" },
@@ -166,6 +167,7 @@ export type Project = {
   impact: string;
   award?: boolean;
   clientCapstone?: boolean;
+  publishedResearch?: boolean;
   hideGithub?: boolean;
   githubUrl: string;
   paperUrl?: string;
@@ -358,16 +360,26 @@ export const projects: Project[] = [
     },
   },
   {
-    title: "AI Voice Agent — Missed Call Prioritization",
+    title: "Echoes of the Unheard — Agentic Voice AI for Missed Call Prioritization",
     category: "AI & GenAI",
     hook: "Triages missed calls for service businesses by analyzing caller intent and urgency.",
     description:
-      "A centralized Google Sheets reporting layer acts as a lightweight BI dashboard for non-technical users.",
-    tech: ["Python", "SQL", "Voice AI", "Google Sheets API"],
-    impact: "End-to-end product from data capture to user-facing reporting.",
+      "An agentic AI framework that helps small hospitality businesses recover revenue lost to missed calls during peak hours. Speech-to-text converts calls into structured signals, AI extraction scores each on sentiment, urgency, and expected business value, and a multi-criteria decision model ranks callbacks so limited staff respond to the highest-value customers first. Results surface through a dynamic dashboard.",
+    tech: [
+      "Agentic AI",
+      "Speech-to-Text",
+      "Sentiment Analysis",
+      "Multi-Criteria Decision Analysis (MCDA)",
+      "LLMs",
+      "Python",
+      "SQL",
+      "Dashboard Design",
+    ],
+    impact: "Presented at the Southwest Decision Sciences Institute (SWDSI) 2026 Conference.",
+    publishedResearch: true,
     githubUrl: profile.github,
     role: "Solo build",
-    timeline: "Side project",
+    timeline: "Aug 2025 – May 2026",
     caseStudy: {
       problem:
         "Small service businesses miss calls all day and have no way to tell which missed callers were ready to buy and which can wait.",
@@ -414,6 +426,9 @@ export const skillGroups = [
       "Feature Engineering",
       "Model Evaluation",
       "Predictive Modeling",
+      "Multi-Criteria Decision Analysis (MCDA)",
+      "Sentiment Analysis",
+      "Decision Modeling",
     ],
   },
   {
