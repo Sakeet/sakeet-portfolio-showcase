@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 const iconByType: Record<ResearchEntry["type"], typeof BookOpen> = {
   Publication: BookOpen,
-  "Conference Presentation": PresentationChart,
+  "Conference Presentation": Presentation,
   "Showcase Selection": Sparkles,
 };
 
