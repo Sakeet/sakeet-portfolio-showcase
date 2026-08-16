@@ -158,7 +158,7 @@ function CaseStudyModal({
               ) : null}
 
               <div className="mt-8 flex flex-wrap gap-2 border-t border-border pt-6">
-                {!project.hideGithub ? (
+                {!project.hideGithub && project.githubUrl ? (
                   <Button size="sm" asChild>
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                       <Github className="size-3.5" /> View on GitHub
@@ -279,7 +279,7 @@ export function Projects() {
                 <p className="mt-4 text-sm font-medium text-primary">{project.impact}</p>
 
                 <div className="mt-5 flex flex-wrap items-center gap-2">
-                  {!project.hideGithub ? (
+                  {!project.hideGithub && project.githubUrl ? (
                     <Button
                       size="sm"
                       variant="outline"
