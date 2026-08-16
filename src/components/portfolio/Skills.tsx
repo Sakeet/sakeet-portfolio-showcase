@@ -21,19 +21,19 @@ const icons: Record<string, LucideIcon> = {
 
 export function Skills() {
   return (
-    <section id="skills" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
+    <section id="skills" className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 md:py-28">
       <SectionHeading
         label="Skills"
         title="The full stack of AI and data."
         subtitle="Modeling and generative AI on top, pipelines and data quality underneath, business analysis holding it together."
       />
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
         {skillGroups.map((group, i) => {
           const Icon = icons[group.icon] ?? Code2;
           return (
             <Reveal key={group.title} delay={(i % 3) * 0.08}>
-              <div className="glass glow-hover h-full rounded-2xl p-6">
+              <div className="glass glow-hover h-full rounded-2xl p-5 sm:p-6">
                 <div className="flex items-center gap-3">
                   <span className="gradient-bg flex size-9 items-center justify-center rounded-lg">
                     <Icon className="size-4 text-primary-foreground" />

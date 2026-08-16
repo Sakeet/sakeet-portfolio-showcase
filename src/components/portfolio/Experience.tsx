@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 
 export function Experience() {
   return (
-    <section id="experience" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
+    <section id="experience" className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 md:py-28">
       <SectionHeading
         label="Experience"
         title="Where I've done the work."
@@ -40,7 +40,7 @@ export function Experience() {
                     right ? "md:col-start-2 md:pl-10" : "md:pr-10 md:text-right",
                   )}
                 >
-                  <article className="glass glow-hover rounded-2xl p-6">
+                  <article className="glass glow-hover rounded-2xl p-5 sm:p-6">
                     <h3 className="text-lg font-semibold">{exp.company}</h3>
                     <p className="mt-1 text-sm font-medium text-primary">{exp.role}</p>
                     <div

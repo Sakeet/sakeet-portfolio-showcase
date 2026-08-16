@@ -27,7 +27,7 @@ function Counter({ value }: { value: number }) {
 
 export function About() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
+    <section id="about" className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 md:py-28">
       <SectionHeading label="About" title="Data first, then AI." />
 
       <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
@@ -40,7 +40,7 @@ export function About() {
         </div>
 
         <Reveal delay={0.15}>
-          <div className="glass glow-hover rounded-2xl p-6">
+          <div className="glass glow-hover rounded-2xl p-5 sm:p-6">
             <h3 className="section-label">Quick facts</h3>
             <dl className="mt-5 space-y-4">
               {quickFacts.map((fact) => (
