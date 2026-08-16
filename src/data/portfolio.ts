@@ -489,6 +489,10 @@ export const skillGroups = [
       "Defect Tracking",
       "Stakeholder Communication",
       "Agile",
+      "Vendor Evaluation",
+      "Solution Architecture",
+      "Cost & TCO Analysis",
+      "Client Presentations",
     ],
   },
 ];
