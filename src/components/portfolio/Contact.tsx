@@ -69,7 +69,7 @@ export function Contact() {
                     <a
                       href={href}
                       target={href.startsWith("http") ? "_blank" : undefined}
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       className="glass glow-hover flex items-center gap-4 rounded-2xl p-4"
                     >
                       {content}
@@ -159,7 +159,7 @@ export function Footer() {
               <a
                 href={href}
                 target={href.startsWith("mailto") ? undefined : "_blank"}
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label={label}
                 className="flex size-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-primary"
               >
