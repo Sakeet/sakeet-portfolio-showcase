@@ -448,7 +448,7 @@ export const awards = [
   "Winner — UC Davis Graduate School of Management × Financial Times Biz Quiz 2024",
   "Top 6 Worldwide — AIS SCLC 2026, Microsoft & James Elliott Cybersecurity Challenge",
   "1 of 6 Teams Worldwide — \u201cRising Stars in Data and AI,\u201d SAS Innovate 2026",
-  "Top 6 Finalist Internationally — HCA Healthcare Analytics Challenge",
+  "Top 6 Finalist Internationally — HCA Healthcare Analytics Challenge, AIS SCLC 2025",
   "Tata Crucible Business Quiz — Online Winner",
   "ETV Champion",
 ];
