@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Award, BookOpen, CheckCircle2, Github, Target, Workflow } from "lucide-react";
+import { ArrowUpRight, Award, BookOpen, CheckCircle2, Github, GraduationCap, Target, Workflow } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -213,6 +213,11 @@ export function Projects() {
                 {project.award ? (
                   <span className="absolute top-3 right-3 inline-flex items-center gap-1 rounded-full bg-background/85 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-foreground">
                     <Award className="size-3 text-primary" /> AWARD WINNER
+                  </span>
+                ) : null}
+                {project.clientCapstone ? (
+                  <span className="absolute top-3 right-3 inline-flex items-center gap-1 rounded-full border border-border bg-secondary/85 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-foreground">
+                    <GraduationCap className="size-3 text-primary" /> CLIENT CAPSTONE
                   </span>
                 ) : null}
                 <span className="absolute bottom-3 left-4 text-[10px] font-semibold tracking-[0.2em] text-primary-foreground/90 uppercase">
