@@ -21,16 +21,16 @@ export function Experience() {
       <div className="relative">
         <div
           aria-hidden
-          className="gradient-bg absolute top-0 bottom-0 left-4 w-px opacity-40 md:left-1/2"
+          className="gradient-bg absolute top-0 bottom-0 left-3 w-px opacity-40 md:left-1/2"
         />
-        <ol className="space-y-10">
+        <ol className="space-y-6 sm:space-y-10">
           {experiences.map((exp, i) => {
             const right = i % 2 === 1;
             return (
-              <li key={exp.company} className="relative pl-12 md:grid md:grid-cols-2 md:gap-10 md:pl-0">
+              <li key={exp.company} className="relative pl-10 sm:pl-12 md:grid md:grid-cols-2 md:gap-10 md:pl-0">
                 <span
                   aria-hidden
-                  className="gradient-bg absolute top-6 left-4 flex size-8 -translate-x-1/2 items-center justify-center rounded-full ring-4 ring-background md:left-1/2"
+                  className="gradient-bg absolute top-5 left-3 flex size-7 sm:top-6 sm:size-8 -translate-x-1/2 items-center justify-center rounded-full ring-4 ring-background md:left-1/2"
                 >
                   <Building2 className="size-4 text-primary-foreground" />
                 </span>

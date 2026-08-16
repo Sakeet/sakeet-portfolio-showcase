@@ -48,7 +48,7 @@ export function Hero() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 
   return (
-    <section id="home" className="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28">
+    <section id="home" className="relative overflow-hidden pt-24 pb-12 sm:pt-28 sm:pb-20 md:pt-36 md:pb-28">
       <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
         <div className="mesh-aurora" />
         <div className="grid-pattern absolute inset-0 opacity-40 [mask-image:radial-gradient(70%_60%_at_50%_35%,black,transparent)]" />
@@ -71,7 +71,7 @@ export function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background" />
       </div>
 
-      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 md:grid-cols-[1.3fr_1fr]">
+      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-8 px-4 sm:gap-12 sm:px-6 md:grid-cols-[1.3fr_1fr]">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
@@ -86,23 +86,23 @@ export function Hero() {
             {profile.availability}
           </span>
 
-          <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="mt-5 text-3xl font-bold tracking-tight sm:mt-6 sm:text-5xl lg:text-6xl">
             {profile.name}
           </h1>
 
-          <p className="mt-3 min-h-8 text-xl font-semibold sm:text-2xl">
+          <p className="mt-2 min-h-7 text-lg font-semibold sm:mt-3 sm:min-h-8 sm:text-2xl">
             <span className="gradient-text">{role}</span>
             <span aria-hidden className="type-caret ml-1" />
           </p>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground/90">
+          <p className="mt-4 max-w-xl text-base leading-relaxed sm:mt-6 sm:text-lg text-foreground/90">
             {profile.tagline}
           </p>
-          <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-3 max-w-xl text-sm sm:mt-4 leading-relaxed text-muted-foreground">
             {profile.subline}
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-wrap gap-3 sm:mt-8">
             <Button size="lg" onClick={() => scrollTo("projects")}>
               View My Work <ArrowDown className="size-4" />
             </Button>
@@ -113,7 +113,7 @@ export function Hero() {
             </Button>
           </div>
 
-          <ul className="mt-8 flex items-center gap-3">
+          <ul className="mt-6 flex items-center gap-3 sm:mt-8">
             {socials.map(({ href, label, Icon }) => (
               <li key={label}>
                 <a
@@ -142,7 +142,7 @@ export function Hero() {
               alt="Portrait placeholder for Sakeet Kopparapu"
               width={1024}
               height={1024}
-              className="size-44 rounded-full border-4 border-background object-cover sm:size-56 md:size-64"
+              className="size-36 rounded-full border-4 border-background object-cover sm:size-56 md:size-64"
             />
           </div>
         </motion.div>
