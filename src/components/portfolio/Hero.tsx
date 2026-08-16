@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { ArrowDown, Download, Github, Linkedin, Mail, PenLine } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { profile, RESUME_URL } from "@/data/portfolio";
-import profileAsset from "@/assets/profile.jpg.asset.json";
 
 function useTypewriter(words: string[]) {
   const [index, setIndex] = useState(0);
@@ -152,7 +151,7 @@ export function Hero() {
             }}
           >
             <img
-              src={profileAsset.url}
+              src="/profile_picture.jpg"
               alt="Portrait of Sakeet Kopparapu"
               width={1024}
               height={1024}
