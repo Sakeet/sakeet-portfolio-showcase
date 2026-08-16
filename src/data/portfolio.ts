@@ -338,6 +338,8 @@ export const skillGroups = [
     skills: [
       "LLMs",
       "Generative AI",
+      "Agentic AI",
+      "Conversational AI",
       "Retrieval-Augmented Generation (RAG)",
       "Prompt Engineering",
       "Model Building",
