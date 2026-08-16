@@ -452,18 +452,31 @@ export const awards = [
   "Tata Crucible Business Quiz — Qualified Round 1 & Completed Round 2 Prelims",
 ];
 
-export const certifications = [
-  "Accenture North America — Data Analytics and Visualization Job Simulation",
-  "Tata Group — Data Analytics Job Simulation",
-  "Deloitte Australia — Data Analytics Job Simulation",
-  "CBRE — Project Management Job Simulation",
-  "McKinsey.org Forward Program",
-  "SQL HackerRank — Intermediate Certified",
-  "CodePath.org — Foundations of AI Engineering Certificate",
-  "Introduction to Python",
+export type Credential = {
+  name: string;
+  type: "program" | "simulation";
+  verifyUrl?: string;
+};
+
+export const credentials: Credential[] = [
+  { name: "CodePath.org — Foundations of AI Engineering Certificate", type: "program" },
+  { name: "SQL (HackerRank) — Intermediate Certified", type: "program" },
+  { name: "McKinsey.org Forward Program", type: "program" },
+  { name: "Accenture North America — Data Analytics and Visualization Job Simulation", type: "simulation" },
+  { name: "Tata Group — Data Analytics Job Simulation", type: "simulation" },
+  { name: "Deloitte Australia — Data Analytics Job Simulation", type: "simulation" },
+  { name: "CBRE — Project Management Job Simulation", type: "simulation" },
 ];
 
-export const publication = "\u201cSURAKSHA: AI-Driven IT Support and Automation\u201d";
+export const publication = {
+  title: "SURAKSHA: AI-Driven IT Support and Automation",
+  venue: "Information Systems Student Research Journal, Vol. 2, Innovation Snapshot 4 (2025)",
+  coAuthors: "A. Chilappagari, N. Pendekanti, T. Mandaloju, S. Kopparapu",
+  summary:
+    "An IT support framework using the Model Context Protocol to connect LLMs to service-desk tools, with self-healing infrastructure, role-based access control, and a federated learning layer for privacy.",
+  paperUrl:
+    "https://www.issrj.org/wp-content/uploads/2025/12/SURAKSHA-AI-Driven-IT-Support-and-Automation.pdf",
+};
 
 export const leadership = [
   {
