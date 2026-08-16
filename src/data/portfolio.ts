@@ -1,3 +1,5 @@
+export const RESUME_URL = "/Kopparapu_Sakeet_Resume.pdf";
+
 export const profile = {
   name: "Sakeet Kopparapu",
   roles: ["AI/ML Engineer", "Data Scientist", "Business Analyst", "Data Analyst"],
@@ -11,7 +13,7 @@ export const profile = {
   linkedin: "https://linkedin.com/in/kopparapu-sakeet",
   github: "https://github.com/Sakeet",
   medium: "https://medium.com/@sakeetkopparapu",
-  resume: "/resume.pdf",
+  resume: RESUME_URL,
 };
 
 export const navLinks = [
