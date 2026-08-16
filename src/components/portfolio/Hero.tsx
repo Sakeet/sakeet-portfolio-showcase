@@ -98,6 +98,9 @@ export function Hero() {
           <p className="mt-4 max-w-xl text-base leading-relaxed sm:mt-6 sm:text-lg text-foreground/90">
             {profile.tagline}
           </p>
+          <p className="mt-3 max-w-xl text-base leading-relaxed text-foreground/80">
+            Published AI researcher. Selected 1 of 6 teams worldwide at SAS Innovate 2026. Two years building data systems that run in production.
+          </p>
           <p className="mt-3 max-w-xl text-sm sm:mt-4 leading-relaxed text-muted-foreground">
             {profile.subline}
           </p>
