@@ -413,6 +413,7 @@ export const skillGroups = [
       "OCR & Document Intelligence",
       "AI Evaluation",
       "Conversational AI",
+      "Custom GPTs",
     ],
   },
   {
@@ -457,6 +458,7 @@ export const skillGroups = [
       "GitLab",
       "REST APIs",
       "Git",
+      "GitHub",
       "GitHub Actions",
     ],
   },
@@ -488,6 +490,7 @@ export const skillGroups = [
       "Linux",
       "Shell Scripting",
       "Jira",
+      "VS Code",
       "Confluence",
     ],
   },
