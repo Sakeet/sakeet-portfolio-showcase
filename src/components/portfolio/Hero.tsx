@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Github, Linkedin, Mail, PenLine } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { currently, profile } from "@/data/portfolio";
+import { profile } from "@/data/portfolio";
 import profilePhoto from "@/assets/profile-placeholder.jpg";
 
 function useTypewriter(words: string[]) {
@@ -147,30 +147,6 @@ export function Hero() {
           </div>
         </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10 mx-auto mt-14 max-w-6xl px-4 sm:px-6"
-      >
-        <div className="glass flex flex-col gap-3 rounded-2xl border border-border/50 p-5 sm:flex-row sm:items-center sm:gap-6">
-          <div className="flex items-center gap-3">
-            <span className="relative flex size-2.5">
-              <span className="absolute inline-flex size-full animate-ping rounded-full bg-teal opacity-75" />
-              <span className="relative inline-flex size-2.5 rounded-full bg-teal" />
-            </span>
-            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              {currently.label}
-            </span>
-          </div>
-          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
-            <span className="font-semibold text-foreground">{currently.status}</span>
-            <span className="hidden h-1 w-1 rounded-full bg-muted-foreground sm:inline-block" />
-            <span className="text-sm text-muted-foreground">{currently.detail}</span>
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 }
