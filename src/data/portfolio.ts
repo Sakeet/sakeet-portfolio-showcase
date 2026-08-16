@@ -64,8 +64,8 @@ export const researchHighlights = [
     subLabel: "\"Rising Stars in Data and AI,\" SAS Innovate 2026",
   },
   {
-    label: "Top 6 Nationwide",
-    subLabel: "HCA Healthcare Analytics Challenge",
+    label: "Top 6 Finalist Internationally",
+    subLabel: "HCA Healthcare Analytics Challenge, AIS SCLC 2025",
   },
   {
     label: "Conference Presenter",
