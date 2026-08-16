@@ -203,7 +203,7 @@
   filter: blur(70px) saturate(150%);
   opacity: 0.55;
   animation: mesh-drift 22s ease-in-out infinite;
-  will-change: transform;
+  transform: translateZ(0);
 }
 
 @keyframes aurora-sweep {
@@ -235,7 +235,6 @@
   filter: blur(70px);
   opacity: 0.35;
   animation: aurora-sweep 28s linear infinite;
-  will-change: transform;
 }
 
 @keyframes caret-blink {
