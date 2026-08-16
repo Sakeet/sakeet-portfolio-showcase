@@ -166,6 +166,7 @@ export type Project = {
   impact: string;
   award?: boolean;
   clientCapstone?: boolean;
+  hideGithub?: boolean;
   githubUrl: string;
   paperUrl?: string;
   role?: string;
