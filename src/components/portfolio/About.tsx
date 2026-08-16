@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import { BookOpen, GraduationCap, Languages, MapPin, Target } from "lucide-react";
 import { Reveal, SectionHeading } from "./Reveal";
-import { aboutNarrative, quickFacts, stats } from "@/data/portfolio";
+import { aboutNarrative, quickFacts, stats, researchHighlights } from "@/data/portfolio";
 
 const factIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   "map-pin": MapPin,
