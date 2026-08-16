@@ -53,7 +53,7 @@ export const Route = createFileRoute("/")({
             name: "University of North Texas",
           },
           sameAs: [
-            "https://linkedin.com/in/kopparapu-sakeet",
+            "https://www.linkedin.com/in/kopparapu-sakeet/",
             "https://github.com/Sakeet",
             "https://medium.com/@sakeetkopparapu",
           ],
