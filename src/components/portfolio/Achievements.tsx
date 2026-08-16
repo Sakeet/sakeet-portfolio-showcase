@@ -1,8 +1,7 @@
-import { BadgeCheck, BookOpen, ExternalLink, Trophy } from "lucide-react";
+import { BadgeCheck, ExternalLink, Trophy } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
 import { Reveal, SectionHeading } from "./Reveal";
-import { awards, credentials, publication } from "@/data/portfolio";
+import { awards, credentials } from "@/data/portfolio";
 
 export function Achievements() {
   const programs = credentials.filter((c) => c.type === "program");
