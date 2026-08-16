@@ -102,7 +102,12 @@ export function Navbar() {
             {dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
           </Button>
           <Button asChild size="sm" className="hidden sm:inline-flex">
-            <a href={profile.resume} download>
+            <a
+              href={RESUME_URL}
+              download="Sakeet_Kopparapu_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Resume
             </a>
           </Button>

@@ -107,7 +107,12 @@ export function Hero() {
               View My Work <ArrowDown className="size-4" />
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <a href={profile.resume} download>
+              <a
+                href={RESUME_URL}
+                download="Sakeet_Kopparapu_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Download className="size-4" /> Download Resume
               </a>
             </Button>
