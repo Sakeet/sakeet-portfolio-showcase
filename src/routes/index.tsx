@@ -25,21 +25,21 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "profile" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://sakeet-portfolio-showcase.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://sakeet-portfolio-showcase.lovable.app/" }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
-          "@id": "/#person",
+          "@id": "https://sakeet-portfolio-showcase.lovable.app/#person",
           name: "Sakeet Kopparapu",
-          url: "/",
+          url: "https://sakeet-portfolio-showcase.lovable.app/",
           jobTitle: "AI/ML Engineer & Data Scientist",
           email: "mailto:sakeetkopparapu332@gmail.com",
           address: {
