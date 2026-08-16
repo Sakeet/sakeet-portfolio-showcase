@@ -44,11 +44,18 @@ function CaseStudyModal({
               <span className="absolute bottom-3 left-6 text-[10px] font-semibold tracking-[0.2em] text-primary-foreground/90 uppercase">
                 {project.category}
               </span>
-              {project.award ? (
-                <span className="absolute top-3 right-14 inline-flex items-center gap-1 rounded-full bg-background/85 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-foreground">
-                  <Award className="size-3 text-primary" /> AWARD WINNER
-                </span>
-              ) : null}
+              <div className="absolute top-3 right-3 flex flex-col items-end gap-1.5">
+                {project.award ? (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-background/85 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-foreground">
+                    <Award className="size-3 text-primary" /> AWARD WINNER
+                  </span>
+                ) : null}
+                {project.publishedResearch ? (
+                  <span className="inline-flex items-center gap-1 rounded-full border border-primary/40 bg-primary/10 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-primary">
+                    <BookOpen className="size-3" /> PUBLISHED RESEARCH
+                  </span>
+                ) : null}
+              </div>
             </div>
 
             <div className="p-6 sm:p-8">
@@ -212,16 +219,23 @@ export function Projects() {
               className="flex h-full w-full cursor-pointer flex-col text-left focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
             >
               <div className="gradient-bg relative h-24 w-full">
-                {project.award ? (
-                  <span className="absolute top-3 right-3 inline-flex items-center gap-1 rounded-full bg-background/85 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-foreground">
-                    <Award className="size-3 text-primary" /> AWARD WINNER
-                  </span>
-                ) : null}
-                {project.clientCapstone ? (
-                  <span className="absolute top-3 right-3 inline-flex items-center gap-1 rounded-full border border-border bg-secondary/85 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-foreground">
-                    <GraduationCap className="size-3 text-primary" /> CLIENT CAPSTONE
-                  </span>
-                ) : null}
+                <div className="absolute top-3 right-3 flex flex-col items-end gap-1.5">
+                  {project.award ? (
+                    <span className="inline-flex items-center gap-1 rounded-full bg-background/85 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-foreground">
+                      <Award className="size-3 text-primary" /> AWARD WINNER
+                    </span>
+                  ) : null}
+                  {project.clientCapstone ? (
+                    <span className="inline-flex items-center gap-1 rounded-full border border-border bg-secondary/85 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-foreground">
+                      <GraduationCap className="size-3 text-primary" /> CLIENT CAPSTONE
+                    </span>
+                  ) : null}
+                  {project.publishedResearch ? (
+                    <span className="inline-flex items-center gap-1 rounded-full border border-primary/40 bg-primary/10 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-primary">
+                      <BookOpen className="size-3" /> PUBLISHED RESEARCH
+                    </span>
+                  ) : null}
+                </div>
                 <span className="absolute bottom-3 left-4 text-[10px] font-semibold tracking-[0.2em] text-primary-foreground/90 uppercase">
                   {project.category}
                 </span>

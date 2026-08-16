@@ -21,6 +21,7 @@ export const navLinks = [
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
+  { id: "research", label: "Research" },
   { id: "skills", label: "Skills" },
   { id: "achievements", label: "Achievements" },
   { id: "contact", label: "Contact" },
@@ -166,6 +167,7 @@ export type Project = {
   impact: string;
   award?: boolean;
   clientCapstone?: boolean;
+  publishedResearch?: boolean;
   hideGithub?: boolean;
   githubUrl: string;
   paperUrl?: string;
@@ -286,6 +288,7 @@ export const projects: Project[] = [
     impact:
       "2nd prize out of 25+ teams at the AIS 2025 Conference; self-healing mechanisms cut manual troubleshooting effort. Also a published paper.",
     award: true,
+    publishedResearch: true,
     githubUrl: "https://github.com/Sakeet/AI_Driven_IT_Support_System",
     paperUrl:
       "https://www.issrj.org/wp-content/uploads/2025/12/SURAKSHA-AI-Driven-IT-Support-and-Automation.pdf",
@@ -358,16 +361,26 @@ export const projects: Project[] = [
     },
   },
   {
-    title: "AI Voice Agent — Missed Call Prioritization",
+    title: "Echoes of the Unheard — Agentic Voice AI for Missed Call Prioritization",
     category: "AI & GenAI",
     hook: "Triages missed calls for service businesses by analyzing caller intent and urgency.",
     description:
-      "A centralized Google Sheets reporting layer acts as a lightweight BI dashboard for non-technical users.",
-    tech: ["Python", "SQL", "Voice AI", "Google Sheets API"],
-    impact: "End-to-end product from data capture to user-facing reporting.",
+      "An agentic AI framework that helps small hospitality businesses recover revenue lost to missed calls during peak hours. Speech-to-text converts calls into structured signals, AI extraction scores each on sentiment, urgency, and expected business value, and a multi-criteria decision model ranks callbacks so limited staff respond to the highest-value customers first. Results surface through a dynamic dashboard.",
+    tech: [
+      "Agentic AI",
+      "Speech-to-Text",
+      "Sentiment Analysis",
+      "Multi-Criteria Decision Analysis (MCDA)",
+      "LLMs",
+      "Python",
+      "SQL",
+      "Dashboard Design",
+    ],
+    impact: "Presented at the Southwest Decision Sciences Institute (SWDSI) 2026 Conference.",
+    publishedResearch: true,
     githubUrl: profile.github,
     role: "Solo build",
-    timeline: "Side project",
+    timeline: "Aug 2025 – May 2026",
     caseStudy: {
       problem:
         "Small service businesses miss calls all day and have no way to tell which missed callers were ready to buy and which can wait.",
@@ -414,6 +427,9 @@ export const skillGroups = [
       "Feature Engineering",
       "Model Evaluation",
       "Predictive Modeling",
+      "Multi-Criteria Decision Analysis (MCDA)",
+      "Sentiment Analysis",
+      "Decision Modeling",
     ],
   },
   {
@@ -575,6 +591,43 @@ export const publication = {
   paperUrl:
     "https://www.issrj.org/wp-content/uploads/2025/12/SURAKSHA-AI-Driven-IT-Support-and-Automation.pdf",
 };
+
+export type ResearchEntry = {
+  type: "Publication" | "Conference Presentation" | "Showcase Selection";
+  title: string;
+  venue: string;
+  coAuthors?: string;
+  summary: string;
+  paperUrl?: string;
+};
+
+export const researchEntries: ResearchEntry[] = [
+  {
+    type: "Publication",
+    title: "SURAKSHA: AI-Driven IT Support and Automation",
+    venue: "Information Systems Student Research Journal, Vol. 2, Innovation Snapshot 4 (2025)",
+    coAuthors: "A. Chilappagari, N. Pendekanti, T. Mandaloju, S. Kopparapu",
+    summary:
+      "An IT support framework using the Model Context Protocol to connect LLMs to service-desk tools, with self-healing infrastructure, role-based access control, and a federated learning layer for privacy.",
+    paperUrl:
+      "https://www.issrj.org/wp-content/uploads/2025/12/SURAKSHA-AI-Driven-IT-Support-and-Automation.pdf",
+  },
+  {
+    type: "Conference Presentation",
+    title: "Echoes of the Unheard: An Agentic Voice AI Framework for Small-Business Missed Call Prioritization",
+    venue: "Southwest Decision Sciences Institute (SWDSI) 2026 Conference, Federation of Business Disciplines",
+    coAuthors: "C. Pulletikurthi, N. D'sa, U. Kaviraj, R. Yenurkar, S. Kopparapu",
+    summary:
+      "An agentic AI framework that converts missed calls into ranked follow-up actions for small hospitality businesses. Speech-to-text and AI signal extraction score each call on sentiment, urgency, and expected business value, and a multi-criteria decision model (MCDA) ranks callbacks so limited staff act on the highest-value interactions first.",
+  },
+  {
+    type: "Showcase Selection",
+    title: "Frontline Forecast: Hospital Length-of-Stay Prediction",
+    venue: "\"Rising Stars in Data and AI\" showcase, SAS Innovate 2026",
+    summary:
+      "Selected as 1 of 6 student teams worldwide. Presented predictive modeling and operational impact to an international professional audience.",
+  },
+];
 
 export const leadership = [
   {
