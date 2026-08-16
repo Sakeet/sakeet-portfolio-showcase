@@ -2,7 +2,6 @@ import { BookOpen, ExternalLink, Presentation, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal, SectionHeading } from "./Reveal";
 import { researchEntries, type ResearchEntry } from "@/data/portfolio";
-import { trackEvent } from "@/lib/analytics";
 
 const iconByType: Record<ResearchEntry["type"], typeof BookOpen> = {
   Publication: BookOpen,
@@ -54,12 +53,6 @@ export function Research() {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label="Read the SURAKSHA paper (opens in new tab)"
-                          onClick={() =>
-                            trackEvent("publication_click", {
-                              link_url: entry.paperUrl,
-                              publication_title: entry.title,
-                            })
-                          }
                         >
                           Read the Paper
                           <ExternalLink className="size-4" aria-hidden />

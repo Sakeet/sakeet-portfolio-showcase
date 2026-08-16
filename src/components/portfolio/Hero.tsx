@@ -4,7 +4,6 @@ import { ArrowDown, Download, Github, Linkedin, Mail, PenLine } from "lucide-rea
 import { Button } from "@/components/ui/button";
 import { profile, RESUME_URL } from "@/data/portfolio";
 import profileAsset from "@/assets/profile.jpg.asset.json";
-import { trackEvent } from "@/lib/analytics";
 
 function useTypewriter(words: string[]) {
   const [index, setIndex] = useState(0);
@@ -116,9 +115,6 @@ export function Hero() {
                 download="Sakeet_Kopparapu_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() =>
-                  trackEvent("resume_download", { location: "hero", file_name: RESUME_URL })
-                }
               >
                 <Download className="size-4" /> Download Resume
               </a>
