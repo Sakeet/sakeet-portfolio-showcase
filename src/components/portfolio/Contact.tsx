@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Github, Linkedin, Mail, MapPin, PenLine, Send } from "lucide-react";
+import { Github, Linkedin, Loader2, Mail, MapPin, PenLine, Send } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Reveal, SectionHeading } from "./Reveal";
-import { profile } from "@/data/portfolio";
+import { FORMSPREE_ENDPOINT, profile } from "@/data/portfolio";
 
 const details = [
   { label: "Email", value: profile.email, href: `mailto:${profile.email}`, Icon: Mail },
@@ -19,10 +19,11 @@ export function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   type FieldErrors = { name?: string; email?: string; subject?: string; message?: string };
   const [errors, setErrors] = useState<FieldErrors>({});
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const update = (key: keyof typeof form, value: string) => setForm((f) => ({ ...f, [key]: value }));
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const next: FieldErrors = {};
     if (form.name.trim().length < 2) next.name = "Please enter your name.";
@@ -32,10 +33,31 @@ export function Contact() {
     setErrors(next);
     if (Object.keys(next).length > 0) return;
 
-    const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`);
-    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(form.subject)}&body=${body}`;
-    toast.success("Thanks! Opening your email client to send the message.");
-    setForm({ name: "", email: "", subject: "", message: "" });
+    setStatus("loading");
+    const data = new FormData();
+    data.append("name", form.name.trim());
+    data.append("email", form.email.trim());
+    data.append("subject", form.subject.trim());
+    data.append("message", form.message.trim());
+    data.append("_gotcha", "");
+    data.append("_subject", "New message from portfolio site");
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data,
+      });
+      if (res.ok) {
+        toast.success("Thanks! Your message has been sent.");
+        setForm({ name: "", email: "", subject: "", message: "" });
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -85,14 +107,18 @@ export function Contact() {
 
         <Reveal delay={0.1}>
           <form onSubmit={onSubmit} className="glass space-y-4 rounded-2xl p-5 sm:p-6" noValidate>
+            <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
+            <input type="hidden" name="_subject" value="New message from portfolio site" />
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
                 <Input
                   id="name"
+                  name="name"
                   value={form.name}
                   onChange={(e) => update("name", e.target.value)}
                   aria-invalid={!!errors.name}
+                  disabled={status === "loading"}
                 />
                 {errors.name ? <p className="text-xs text-destructive">{errors.name}</p> : null}
               </div>
@@ -100,10 +126,12 @@ export function Contact() {
                 <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
+                  name="email"
                   type="email"
                   value={form.email}
                   onChange={(e) => update("email", e.target.value)}
                   aria-invalid={!!errors.email}
+                  disabled={status === "loading"}
                 />
                 {errors.email ? <p className="text-xs text-destructive">{errors.email}</p> : null}
               </div>
@@ -112,9 +140,11 @@ export function Contact() {
               <Label htmlFor="subject">Subject</Label>
               <Input
                 id="subject"
+                name="subject"
                 value={form.subject}
                 onChange={(e) => update("subject", e.target.value)}
                 aria-invalid={!!errors.subject}
+                disabled={status === "loading"}
               />
               {errors.subject ? <p className="text-xs text-destructive">{errors.subject}</p> : null}
             </div>
@@ -122,15 +152,34 @@ export function Contact() {
               <Label htmlFor="message">Message</Label>
               <Textarea
                 id="message"
+                name="message"
                 rows={5}
                 value={form.message}
                 onChange={(e) => update("message", e.target.value)}
                 aria-invalid={!!errors.message}
+                disabled={status === "loading"}
               />
               {errors.message ? <p className="text-xs text-destructive">{errors.message}</p> : null}
             </div>
-            <Button type="submit" size="lg" className="w-full">
-              Send Message <Send className="size-4" />
+            {status === "error" ? (
+              <p className="text-sm text-destructive">
+                Something went wrong. Please email me directly at{" "}
+                <a href={`mailto:${profile.email}`} className="underline underline-offset-2">
+                  {profile.email}
+                </a>
+                .
+              </p>
+            ) : null}
+            <Button type="submit" size="lg" className="w-full" disabled={status === "loading"}>
+              {status === "loading" ? (
+                <>
+                  <Loader2 className="size-4 animate-spin" /> Sending…
+                </>
+              ) : (
+                <>
+                  Send Message <Send className="size-4" />
+                </>
+              )}
             </Button>
           </form>
         </Reveal>

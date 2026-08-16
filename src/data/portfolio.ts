@@ -1,4 +1,5 @@
 export const RESUME_URL = "/Kopparapu_Sakeet_Resume.pdf";
+export const FORMSPREE_ENDPOINT = "https://formspree.io/f/xqpzyzjg";
 
 export const profile = {
   name: "Sakeet Kopparapu",
