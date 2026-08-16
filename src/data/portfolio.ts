@@ -624,11 +624,17 @@ export const publication = {
     "https://www.issrj.org/wp-content/uploads/2025/12/SURAKSHA-AI-Driven-IT-Support-and-Automation.pdf",
 };
 
+export type ResearchAuthor = {
+  name: string;
+  /** Marks the portfolio owner so the UI can emphasize their name. */
+  isMe?: boolean;
+};
+
 export type ResearchEntry = {
   type: "Publication" | "Conference Presentation" | "Showcase Selection";
   title: string;
   venue: string;
-  coAuthors?: string;
+  authors?: ResearchAuthor[];
   summary: string;
   paperUrl?: string;
 };
@@ -638,7 +644,12 @@ export const researchEntries: ResearchEntry[] = [
     type: "Publication",
     title: "SURAKSHA: AI-Driven IT Support and Automation",
     venue: "Information Systems Student Research Journal, Vol. 2, Innovation Snapshot 4 (2025)",
-    coAuthors: "A. Chilappagari, N. Pendekanti, T. Mandaloju, S. Kopparapu",
+    authors: [
+      { name: "A. Chilappagari" },
+      { name: "N. Pendekanti" },
+      { name: "T. Mandaloju" },
+      { name: "S. Kopparapu", isMe: true },
+    ],
     summary:
       "An IT support framework using the Model Context Protocol to connect LLMs to service-desk tools, with self-healing infrastructure, role-based access control, and a federated learning layer for privacy.",
     paperUrl:
@@ -648,7 +659,13 @@ export const researchEntries: ResearchEntry[] = [
     type: "Conference Presentation",
     title: "Echoes of the Unheard: An Agentic Voice AI Framework for Small-Business Missed Call Prioritization",
     venue: "Southwest Decision Sciences Institute (SWDSI) 2026 Conference, Federation of Business Disciplines",
-    coAuthors: "C. Pulletikurthi, N. D'sa, U. Kaviraj, R. Yenurkar, S. Kopparapu",
+    authors: [
+      { name: "C. Pulletikurthi" },
+      { name: "N. D'sa" },
+      { name: "U. Kaviraj" },
+      { name: "R. Yenurkar" },
+      { name: "S. Kopparapu", isMe: true },
+    ],
     summary:
       "An agentic AI framework that converts missed calls into ranked follow-up actions for small hospitality businesses. Speech-to-text and AI signal extraction score each call on sentiment, urgency, and expected business value, and a multi-criteria decision model (MCDA) ranks callbacks so limited staff act on the highest-value interactions first.",
   },
