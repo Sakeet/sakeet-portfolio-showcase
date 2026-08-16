@@ -166,6 +166,7 @@ export type Project = {
   impact: string;
   award?: boolean;
   githubUrl: string;
+  paperUrl?: string;
   role?: string;
   timeline?: string;
   caseStudy: CaseStudy;
