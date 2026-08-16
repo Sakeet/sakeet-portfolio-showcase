@@ -370,7 +370,7 @@ export const projects: Project[] = [
     tech: ["Python", "LLMs", "Database Design", "Recommendation Systems"],
     impact: "3rd place out of 18 teams.",
     award: true,
-    githubUrl: "https://github.com/Team5-AI-HackAThon/HackAThon-Crucible-BE-PythonApp",
+    githubUrl: "https://github.com/Team5-AI-HackAThon/HackAThon-Crucible-BE-Python-App",
     role: "Data & backend architecture",
     timeline: "5-week hackathon",
     caseStudy: {
