@@ -12,7 +12,7 @@ export function Achievements() {
       <SectionHeading
         label="Achievements"
         title="Recognition & credentials."
-        subtitle="National and worldwide placements in AI, analytics, and cybersecurity competitions, plus certifications and a published paper."
+        subtitle="National and worldwide placements in AI, analytics, and cybersecurity competitions, plus certifications."
       />
 
       <Reveal>
@@ -34,35 +34,6 @@ export function Achievements() {
           </TabsContent>
 
           <TabsContent value="certs" className="mt-6 space-y-6">
-            {/* Featured publication */}
-            <div className="relative overflow-hidden rounded-2xl border-l-4 border-primary bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-6 sm:p-8">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5">
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <BookOpen className="size-6" aria-hidden />
-                </div>
-                <div className="flex-1 space-y-3">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-primary">Publication</p>
-                    <h3 className="mt-1 text-xl font-bold sm:text-2xl">{publication.title}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{publication.venue}</p>
-                    <p className="mt-1 text-sm text-muted-foreground">Co-authors: {publication.coAuthors}</p>
-                  </div>
-                  <p className="max-w-3xl text-sm leading-relaxed sm:text-base">{publication.summary}</p>
-                  <Button asChild variant="default" size="sm" className="w-fit gap-2">
-                    <a
-                      href={publication.paperUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Read the SURAKSHA paper (opens in new tab)"
-                    >
-                      Read the Paper
-                      <ExternalLink className="size-4" aria-hidden />
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </div>
-
             {/* Programs & Assessments */}
             <div>
               <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
