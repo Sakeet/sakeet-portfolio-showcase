@@ -102,7 +102,7 @@ export const experiences: Experience[] = [
     company: "Capgemini",
     role: "Associate I, Software Engineer",
     dates: "June 2023 – August 2024",
-    location: "Gurugram, India",
+    location: "India",
     bullets: [
       "Built SQL stored procedures and SSIS ETL pipelines processing 100K+ records per week, improving ingestion efficiency by 30% and achieving 100% accuracy on target-database loads.",
       "Served as technical point of contact for attendance-system data quality, defining and executing test cases against documented business rules across employee, manager, and supervisor roles.",
