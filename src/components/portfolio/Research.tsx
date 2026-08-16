@@ -1,4 +1,4 @@
-import { BookOpen, ExternalLink, PresentationChart, Sparkles } from "lucide-react";
+import { BookOpen, ExternalLink, Presentation, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal, SectionHeading } from "./Reveal";
 import { researchEntries, type ResearchEntry } from "@/data/portfolio";
