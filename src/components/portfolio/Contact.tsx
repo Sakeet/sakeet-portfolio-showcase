@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Github, Linkedin, Mail, MapPin, PenLine, Send } from "lucide-react";
+import { Github, Linkedin, Loader2, Mail, MapPin, PenLine, Send } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Reveal, SectionHeading } from "./Reveal";
-import { profile } from "@/data/portfolio";
+import { FORMSPREE_ENDPOINT, profile } from "@/data/portfolio";
 
 const details = [
   { label: "Email", value: profile.email, href: `mailto:${profile.email}`, Icon: Mail },
@@ -19,10 +19,11 @@ export function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   type FieldErrors = { name?: string; email?: string; subject?: string; message?: string };
   const [errors, setErrors] = useState<FieldErrors>({});
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const update = (key: keyof typeof form, value: string) => setForm((f) => ({ ...f, [key]: value }));
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const next: FieldErrors = {};
     if (form.name.trim().length < 2) next.name = "Please enter your name.";
@@ -32,10 +33,31 @@ export function Contact() {
     setErrors(next);
     if (Object.keys(next).length > 0) return;
 
-    const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`);
-    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(form.subject)}&body=${body}`;
-    toast.success("Thanks! Opening your email client to send the message.");
-    setForm({ name: "", email: "", subject: "", message: "" });
+    setStatus("loading");
+    const data = new FormData();
+    data.append("name", form.name.trim());
+    data.append("email", form.email.trim());
+    data.append("subject", form.subject.trim());
+    data.append("message", form.message.trim());
+    data.append("_gotcha", "");
+    data.append("_subject", "New message from portfolio site");
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data,
+      });
+      if (res.ok) {
+        toast.success("Thanks! Your message has been sent.");
+        setForm({ name: "", email: "", subject: "", message: "" });
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
