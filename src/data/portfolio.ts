@@ -232,11 +232,23 @@ export const projects: Project[] = [
     hook: "Intelligent chatbot for IT incident management and automated ticketing.",
     description:
       "Integrated with SolarWinds APIs for real-time autonomous workflow execution via natural language.",
-    tech: ["Python", "LLMs", "SolarWinds API", "NLP", "Automation"],
+    tech: [
+      "Model Context Protocol (MCP)",
+      "LLMs (Claude 3.7 Sonnet)",
+      "Federated Learning",
+      "RBAC",
+      "JWT Authentication",
+      "Anomaly Detection",
+      "SolarWinds Service Desk API",
+      "Python",
+      "Prompt Engineering",
+    ],
     impact:
       "2nd prize out of 25+ teams at the AIS 2025 Conference; self-healing mechanisms cut manual troubleshooting effort. Also a published paper.",
     award: true,
     githubUrl: "https://github.com/Sakeet/AI_Driven_IT_Support_System",
+    paperUrl:
+      "https://www.issrj.org/wp-content/uploads/2025/12/SURAKSHA-AI-Driven-IT-Support-and-Automation.pdf",
     role: "AI Engineer",
     timeline: "Research project + published paper",
     caseStudy: {
