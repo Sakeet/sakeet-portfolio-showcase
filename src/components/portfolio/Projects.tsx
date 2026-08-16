@@ -87,51 +87,75 @@ function CaseStudyModal({
                 </dl>
               ) : null}
 
-              <section className="mt-7">
-                <h4 className="flex items-center gap-2 text-sm font-semibold">
-                  <Target className="size-4 text-primary" /> The problem
-                </h4>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {project.caseStudy.problem}
-                </p>
-              </section>
+              {project.caseStudy.problem ? (
+                <section className="mt-7">
+                  <h4 className="flex items-center gap-2 text-sm font-semibold">
+                    <Target className="size-4 text-primary" /> The Problem
+                  </h4>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {project.caseStudy.problem}
+                  </p>
+                </section>
+              ) : null}
 
-              <section className="mt-7">
-                <h4 className="flex items-center gap-2 text-sm font-semibold">
-                  <Workflow className="size-4 text-primary" /> Approach
-                </h4>
-                <ul className="mt-3 space-y-2.5">
-                  {project.caseStudy.approach.map((step, i) => (
-                    <li key={step} className="flex gap-3 text-sm leading-relaxed">
-                      <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border border-border text-[10px] font-semibold text-primary">
-                        {i + 1}
-                      </span>
-                      <span className="text-muted-foreground">{step}</span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
+              {project.caseStudy.approach.length ? (
+                <section className="mt-7">
+                  <h4 className="flex items-center gap-2 text-sm font-semibold">
+                    <Workflow className="size-4 text-primary" /> My Approach
+                  </h4>
+                  <ul className="mt-3 space-y-2.5">
+                    {project.caseStudy.approach.map((step, i) => (
+                      <li key={step} className="flex gap-3 text-sm leading-relaxed">
+                        <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border border-border text-[10px] font-semibold text-primary">
+                          {i + 1}
+                        </span>
+                        <span className="text-muted-foreground">{step}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ) : null}
 
-              <section className="mt-7">
-                <h4 className="text-sm font-semibold">Tech stack</h4>
-                <div className="mt-3">
-                  <TechList tech={project.tech} />
-                </div>
-              </section>
+              {project.caseStudy.owned.length ? (
+                <section className="mt-7">
+                  <h4 className="flex items-center gap-2 text-sm font-semibold">
+                    <UserCheck className="size-4 text-primary" /> What I Owned
+                  </h4>
+                  <ul className="mt-3 space-y-2.5">
+                    {project.caseStudy.owned.map((item) => (
+                      <li key={item} className="flex gap-3 text-sm leading-relaxed">
+                        <UserCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                        <span className="text-muted-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ) : null}
 
-              <section className="mt-7">
-                <h4 className="flex items-center gap-2 text-sm font-semibold">
-                  <CheckCircle2 className="size-4 text-primary" /> Outcome
-                </h4>
-                <ul className="mt-3 space-y-2.5">
-                  {project.caseStudy.outcome.map((item) => (
-                    <li key={item} className="flex gap-3 text-sm leading-relaxed">
-                      <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
-                      <span className="text-muted-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
+              {project.tech.length ? (
+                <section className="mt-7">
+                  <h4 className="text-sm font-semibold">Tech stack</h4>
+                  <div className="mt-3">
+                    <TechList tech={project.tech} />
+                  </div>
+                </section>
+              ) : null}
+
+              {project.caseStudy.outcome.length ? (
+                <section className="mt-7">
+                  <h4 className="flex items-center gap-2 text-sm font-semibold">
+                    <CheckCircle2 className="size-4 text-primary" /> The Outcome
+                  </h4>
+                  <ul className="mt-3 space-y-2.5">
+                    {project.caseStudy.outcome.map((item) => (
+                      <li key={item} className="flex gap-3 text-sm leading-relaxed">
+                        <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
+                        <span className="text-muted-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ) : null}
 
               <div className="mt-8 flex flex-wrap gap-2 border-t border-border pt-6">
                 {!project.hideGithub ? (
