@@ -165,6 +165,7 @@ export type Project = {
   tech: string[];
   impact: string;
   award?: boolean;
+  clientCapstone?: boolean;
   githubUrl: string;
   paperUrl?: string;
   role?: string;
