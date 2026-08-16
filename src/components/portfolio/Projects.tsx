@@ -215,6 +215,11 @@ export function Projects() {
                     <Award className="size-3 text-primary" /> AWARD WINNER
                   </span>
                 ) : null}
+                {project.clientCapstone ? (
+                  <span className="absolute top-3 right-3 inline-flex items-center gap-1 rounded-full border border-border bg-secondary/85 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-foreground">
+                    <GraduationCap className="size-3 text-primary" /> CLIENT CAPSTONE
+                  </span>
+                ) : null}
                 <span className="absolute bottom-3 left-4 text-[10px] font-semibold tracking-[0.2em] text-primary-foreground/90 uppercase">
                   {project.category}
                 </span>
