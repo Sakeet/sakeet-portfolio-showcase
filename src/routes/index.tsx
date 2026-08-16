@@ -37,11 +37,21 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
+          "@id": "/#person",
           name: "Sakeet Kopparapu",
+          url: "/",
           jobTitle: "AI/ML Engineer & Data Scientist",
           email: "mailto:sakeetkopparapu332@gmail.com",
-          address: { "@type": "PostalAddress", addressLocality: "Plano", addressRegion: "TX" },
-          alumniOf: "University of North Texas",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Plano",
+            addressRegion: "TX",
+            addressCountry: "US",
+          },
+          alumniOf: {
+            "@type": "CollegeOrUniversity",
+            name: "University of North Texas",
+          },
           sameAs: [
             "https://linkedin.com/in/kopparapu-sakeet",
             "https://github.com/Sakeet",
