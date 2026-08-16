@@ -1,5 +1,8 @@
 export const RESUME_URL = "/Kopparapu_Sakeet_Resume.pdf";
 
+/** Paste your Google Analytics 4 measurement ID here (looks like "G-ABC123XYZ"). */
+export const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+
 export const profile = {
   name: "Sakeet Kopparapu",
   roles: ["AI/ML Engineer", "Data Scientist", "Business Analyst", "Data Analyst"],
