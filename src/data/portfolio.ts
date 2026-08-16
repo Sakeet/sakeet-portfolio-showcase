@@ -455,6 +455,11 @@ export const awards = [
 export const certifications = [
   "Accenture North America — Data Analytics and Visualization Job Simulation",
   "Tata Group — Data Analytics Job Simulation",
+  "Deloitte Australia — Data Analytics Job Simulation",
+  "CBRE — Project Management Job Simulation",
+  "McKinsey.org Forward Program",
+  "SQL HackerRank — Intermediate Certified",
+  "CodePath.org — Foundations of AI Engineering Certificate",
   "Introduction to Python",
 ];
 
