@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Download, Github, Linkedin, Mail, PenLine } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { profile } from "@/data/portfolio";
-import profilePhoto from "@/assets/profile-placeholder.jpg";
+import profileAsset from "@/assets/profile.jpg.asset.json";
 
 function useTypewriter(words: string[]) {
   const [index, setIndex] = useState(0);
@@ -136,10 +136,16 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="order-1 flex justify-center md:order-2"
         >
-          <div className="gradient-bg rounded-full p-[3px] shadow-2xl">
+          <div
+            className="rounded-full p-[3px] shadow-2xl"
+            style={{
+              backgroundImage:
+                "linear-gradient(135deg, #E8E1C8 0%, #7DD3D8 35%, #3B5BA5 70%, #1E2A5A 100%)",
+            }}
+          >
             <img
-              src={profilePhoto}
-              alt="Portrait placeholder for Sakeet Kopparapu"
+              src={profileAsset.url}
+              alt="Portrait of Sakeet Kopparapu"
               width={1024}
               height={1024}
               className="size-36 rounded-full border-4 border-background object-cover sm:size-56 md:size-64"
