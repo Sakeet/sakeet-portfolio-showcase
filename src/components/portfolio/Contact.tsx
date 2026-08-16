@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Github, Linkedin, Mail, MapPin, PenLine, Phone, Send } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, PenLine, Send } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,7 +10,6 @@ import { profile } from "@/data/portfolio";
 
 const details = [
   { label: "Email", value: profile.email, href: `mailto:${profile.email}`, Icon: Mail },
-  { label: "Phone", value: profile.phone, href: `tel:${profile.phoneHref}`, Icon: Phone },
   { label: "Location", value: profile.location, href: undefined, Icon: MapPin },
   { label: "LinkedIn", value: "linkedin.com/in/kopparapu-sakeet", href: profile.linkedin, Icon: Linkedin },
   { label: "GitHub", value: "github.com/Sakeet", href: profile.github, Icon: Github },

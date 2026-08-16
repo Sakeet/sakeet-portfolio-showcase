@@ -7,8 +7,6 @@ export const profile = {
     "MS in Information Systems & Technologies @ University of North Texas (May 2026) · Plano, TX · Open to relocate",
   availability: "Open to Full-Time & Internship Opportunities",
   email: "sakeetkopparapu332@gmail.com",
-  phone: "+1 (945) 297-5183",
-  phoneHref: "+19452975183",
   location: "Plano, TX (open to relocate)",
   linkedin: "https://linkedin.com/in/kopparapu-sakeet",
   github: "https://github.com/Sakeet",
