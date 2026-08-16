@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Award, BookOpen, CheckCircle2, Github, GraduationCap, Target, Workflow } from "lucide-react";
+import { ArrowUpRight, Award, BookOpen, CheckCircle2, Github, GraduationCap, Target, UserCheck, Workflow } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
