@@ -1,0 +1,360 @@
+export const profile = {
+  name: "Sakeet Kopparapu",
+  roles: ["AI/ML Engineer", "Data Scientist", "Business Analyst", "Data Analyst"],
+  tagline:
+    "I didn't start in AI. I started in data — and that's why my AI actually works.",
+  subline:
+    "MS in Information Systems & Technologies @ University of North Texas (May 2026) · Plano, TX · Open to relocate",
+  availability: "Open to Full-Time & Internship Opportunities",
+  email: "sakeetkopparapu332@gmail.com",
+  phone: "+1 (945) 297-5183",
+  phoneHref: "+19452975183",
+  location: "Plano, TX (open to relocate)",
+  linkedin: "https://linkedin.com/in/kopparapu-sakeet",
+  github: "https://github.com/Sakeet",
+  medium: "https://medium.com/@sakeetkopparapu",
+  resume: "/resume.pdf",
+};
+
+export const navLinks = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  { id: "skills", label: "Skills" },
+  { id: "achievements", label: "Achievements" },
+  { id: "contact", label: "Contact" },
+];
+
+export const aboutNarrative = [
+  "I started my career at Capgemini, spending 14 months doing the work that makes everything else possible — building ETL pipelines, validating datasets, and making sure 1,000+ employees got accurate payroll and workforce reports every single week. It wasn't flashy, but it taught me the lesson that still shapes how I work: the smartest AI system in the world is only as good as the data flowing into it.",
+  "That mindset carried into machine learning and generative AI. Instead of treating data as an afterthought, I design for it from the start — whether that's leading a 10-member team building an AI-driven real estate platform, architecting RAG and OCR pipelines for document extraction, or building a real-time translation system so no 911 emergency call gets lost in a language barrier.",
+  "What I bring is the full stack of AI and data work — not just modeling. Database schemas, prompt engineering, dashboards in Tableau and Power BI, and leading cross-functional teams through ambiguous technical problems.",
+];
+
+export const quickFacts = [
+  { label: "Location", value: "Plano, TX (open to relocate)" },
+  {
+    label: "Education",
+    value: "MS Information Systems & Technologies, UNT — GPA 3.6/4",
+  },
+  { label: "Undergrad", value: "BTech Computer Science, Amrita Vishwa Vidyapeetham" },
+  { label: "Focus", value: "AI/ML Engineering, Data Science, Analytics" },
+  { label: "Languages", value: "Telugu, Hindi, English, Tamil" },
+];
+
+export const stats = [
+  { value: 100, suffix: "K+", label: "records processed weekly" },
+  { value: 200, suffix: "+", label: "students taught as TA" },
+  { value: 10, suffix: "-member", label: "team led" },
+  { value: 6, suffix: "", label: "hackathons & national competitions placed in" },
+];
+
+export type Experience = {
+  company: string;
+  role: string;
+  dates: string;
+  location?: string;
+  bullets: string[];
+};
+
+export const experiences: Experience[] = [
+  {
+    company: "University of North Texas",
+    role: "Teaching / Instructional Assistant",
+    dates: "May 2025 – May 2026",
+    location: "Denton, TX",
+    bullets: [
+      "Supported instruction for 200+ students across data, analytics, and information systems courses; led weekly labs and office hours resolving 300+ SQL, Python, and analytics queries, cutting problem-resolution turnaround by 40%.",
+      "Created end-user documentation, instructional lab videos, and Respondus 4.0 assessment content to streamline course delivery.",
+      "Graded 200+ assignments and exams with a focus on analytical rigor and reproducibility, maintaining 99% on-time feedback.",
+      "Collaborated weekly with faculty to redesign assignments around real-world business use cases, improving applied assessment performance by 20%.",
+    ],
+  },
+  {
+    company: "AriesView",
+    role: "AI Research & Engineering",
+    dates: "June 2025 – August 2025",
+    location: "Remote",
+    bullets: [
+      "Led a core platform feature end-to-end, from requirements elicitation to rollout, managing a 10-member cross-functional team across backend, frontend, and database layers.",
+      "Translated stakeholder requirements into scalable system architecture, business rules, and data models for a real estate data product.",
+      "Built production data pipelines using OCR, LLMs, and Retrieval-Augmented Generation (RAG) to automate structured extraction from complex documents.",
+      "Built evaluation and testing frameworks to verify outputs against defined requirements.",
+    ],
+  },
+  {
+    company: "Dallas AI",
+    role: "Summer Research Program",
+    dates: "June 2025 – August 2025",
+    location: "Dallas, TX",
+    bullets: [
+      "Built FirstVox, a secure on-premise real-time translation system that eliminates language barriers for 911 dispatchers.",
+      "Architected an end-to-end audio pipeline using OpenAI Whisper for transcription and Meta SeamlessM4T for translation and speech synthesis, routed through a virtual audio device with zero network dependency for full privacy compliance.",
+      "Delivered a production-ready system in 8 weeks with a 5-person cross-functional team under faculty mentorship.",
+    ],
+  },
+  {
+    company: "Capgemini",
+    role: "Associate I, Software Engineer",
+    dates: "June 2023 – August 2024",
+    location: "Gurugram, India",
+    bullets: [
+      "Built SQL stored procedures and SSIS ETL pipelines processing 100K+ records per week, improving ingestion efficiency by 30% and achieving 100% accuracy on target-database loads.",
+      "Served as technical point of contact for attendance-system data quality, defining and executing test cases against documented business rules across employee, manager, and supervisor roles.",
+      "Performed data cleaning, validation, and reconciliation across multiple source systems, raising data quality to 99%+ for downstream analytics.",
+      "Partnered with business and technical stakeholders to translate operational requirements into scalable workflows, cutting report turnaround time by 25–30%.",
+    ],
+  },
+  {
+    company: "Senselearner Technologies",
+    role: "Cyber Security Intern",
+    dates: "Sept 2023 – Oct 2023",
+    bullets: [
+      "Conducted full reconnaissance and vulnerability assessment on a live domain using Nmap, Nikto, Gobuster, Burp Suite, and Subfinder, producing a remediation-focused security report.",
+      "Applied pentesting concepts across the attack lifecycle: network scanning, OS fingerprinting, VAPT, and OWASP Top 10 web vulnerabilities.",
+    ],
+  },
+  {
+    company: "Oasis Infobyte",
+    role: "Machine Learning Intern",
+    dates: "Nov 2022 – Dec 2022",
+    bullets: [
+      "Processed real-world datasets of 10K–50K+ records with Python, Pandas, and NumPy, improving data usability by 30–40% through preprocessing and feature engineering.",
+      "Built and tuned classification and regression models, achieving 10–20% performance gains through feature optimization and hyperparameter tuning.",
+    ],
+  },
+];
+
+export const earlierExperience = [
+  {
+    company: "Pinnacle Full-Stack Interns",
+    role: "Data Analyst Intern",
+    dates: "Jul – Aug 2021",
+  },
+  {
+    company: "Internshala",
+    role: "Student Partner",
+    dates: "May – Aug 2020",
+  },
+];
+
+export const projectCategories = [
+  "All",
+  "AI & GenAI",
+  "Machine Learning",
+  "Analytics & BI",
+  "Data Engineering",
+] as const;
+
+export type Project = {
+  title: string;
+  category: (typeof projectCategories)[number];
+  hook: string;
+  description: string;
+  tech: string[];
+  impact: string;
+  award?: boolean;
+  github?: string;
+};
+
+export const projects: Project[] = [
+  {
+    title: "FirstVox — Real-Time 911 Translation System",
+    category: "AI & GenAI",
+    hook: "Live, bidirectional translation for emergency dispatchers with zero network dependency.",
+    description:
+      "Built with OpenAI Whisper and Meta SeamlessM4T routed through a virtual audio device so no call data leaves the premises.",
+    tech: ["Python", "Whisper", "SeamlessM4T", "Audio Pipelines", "On-Prem Deployment"],
+    impact: "Production-ready in 8 weeks with a 5-person team.",
+    github: profile.github,
+  },
+  {
+    title: "Frontline Forecast — Hospital Length-of-Stay Prediction",
+    category: "Machine Learning",
+    hook: "Predictive model on a 101,766-row healthcare dataset spanning 130 hospitals.",
+    description:
+      "Built with SQL and SAS Viya. What-if simulations showed earlier discharge for 10% of patients could free 8–12 beds per day.",
+    tech: ["SAS Viya", "SQL", "Python", "Predictive Modeling"],
+    impact:
+      "1 of 6 teams worldwide selected for the \u201cRising Stars in Data and AI\u201d showcase at SAS Innovate 2026.",
+    award: true,
+    github: profile.github,
+  },
+  {
+    title: "SURAKSHA — AI-Driven IT Support & Task Automation",
+    category: "AI & GenAI",
+    hook: "Intelligent chatbot for IT incident management and automated ticketing.",
+    description:
+      "Integrated with SolarWinds APIs for real-time autonomous workflow execution via natural language.",
+    tech: ["Python", "LLMs", "SolarWinds API", "NLP", "Automation"],
+    impact:
+      "2nd prize out of 25+ teams at the AIS 2025 Conference; self-healing mechanisms cut manual troubleshooting effort. Also a published paper.",
+    award: true,
+    github: profile.github,
+  },
+  {
+    title: "HCA Healthcare Resilience Platform",
+    category: "Analytics & BI",
+    hook: "EDA and hypothesis validation on 200,000+ rows of deidentified employee data.",
+    description:
+      "Summary statistics and visualizations that optimized resource allocation, plus a functional website to make the solution accessible to end users.",
+    tech: ["Python", "Pandas", "Data Visualization", "Statistical Analysis"],
+    impact: "Top 6 nationwide finalist out of 25+ university teams.",
+    award: true,
+    github: profile.github,
+  },
+  {
+    title: "PEAR — AI Founder–Investor Matching Platform",
+    category: "AI & GenAI",
+    hook: "AI-powered matching platform built in a 5-week hackathon.",
+    description:
+      "Owned database architecture and data modeling, and designed a matching pipeline that improved recommendation relevance through structured workflows and iterative testing.",
+    tech: ["Python", "LLMs", "Database Design", "Recommendation Systems"],
+    impact: "3rd place out of 18 teams.",
+    award: true,
+    github: profile.github,
+  },
+  {
+    title: "AI Voice Agent — Missed Call Prioritization",
+    category: "AI & GenAI",
+    hook: "Triages missed calls for service businesses by analyzing caller intent and urgency.",
+    description:
+      "A centralized Google Sheets reporting layer acts as a lightweight BI dashboard for non-technical users.",
+    tech: ["Python", "SQL", "Voice AI", "Google Sheets API"],
+    impact: "End-to-end product from data capture to user-facing reporting.",
+    github: profile.github,
+  },
+  {
+    title: "Enterprise Workforce Data Pipeline @ Capgemini",
+    category: "Data Engineering",
+    hook: "SQL stored procedures and SSIS ETL pipelines for employee data integration and migration.",
+    description: "Validated source-to-target mappings across multiple enterprise systems.",
+    tech: ["SQL Server", "SSIS", "T-SQL", "ETL", "Data Validation"],
+    impact: "100K+ records/week at 99%+ accuracy.",
+    github: profile.github,
+  },
+];
+
+export const skillGroups = [
+  {
+    title: "AI & Machine Learning",
+    icon: "brain",
+    skills: [
+      "LLMs",
+      "Retrieval-Augmented Generation (RAG)",
+      "Prompt Engineering",
+      "OCR",
+      "Whisper",
+      "SeamlessM4T",
+      "Scikit-learn",
+      "Feature Engineering",
+      "Model Evaluation",
+      "XGBoost",
+      "CatBoost",
+      "Random Forests",
+    ],
+  },
+  {
+    title: "Data & Analytics",
+    icon: "database",
+    skills: [
+      "SQL",
+      "Python",
+      "SAS Viya",
+      "ETL Pipeline Development",
+      "Data Modeling",
+      "Exploratory Data Analysis",
+      "Data Validation",
+      "Data Quality",
+      "Data Migration",
+    ],
+  },
+  {
+    title: "BI & Visualization",
+    icon: "chart",
+    skills: [
+      "Tableau",
+      "Power BI",
+      "Alteryx",
+      "Excel",
+      "Sigma Computing",
+      "Dashboard Design",
+      "Data Visualization",
+    ],
+  },
+  {
+    title: "Databases & Tools",
+    icon: "server",
+    skills: [
+      "Oracle",
+      "SQL Server",
+      "SSIS",
+      "Snowflake",
+      "Salesforce",
+      "Linux",
+      "SSH",
+      "Git",
+      "Azure",
+      "Google Cloud",
+    ],
+  },
+  {
+    title: "Frameworks & Libraries",
+    icon: "code",
+    skills: ["NumPy", "Pandas", "Matplotlib", "Seaborn", "Plotly", "SciPy"],
+  },
+  {
+    title: "Business Analysis",
+    icon: "briefcase",
+    skills: [
+      "Requirements Gathering & Elicitation",
+      "Business Rules Documentation",
+      "Functional Specifications",
+      "Data Mapping",
+      "Test Case Documentation",
+      "UAT",
+      "Defect Tracking",
+      "Stakeholder Communication",
+      "Agile",
+    ],
+  },
+];
+
+export const awards = [
+  "Top 6 Worldwide — AIS SCLC 2026, Microsoft & James Elliott Cybersecurity Challenge",
+  "1 of 6 Teams Worldwide — \u201cRising Stars in Data and AI,\u201d SAS Innovate 2026",
+  "Top 6 Nationwide Finalist — HCA Healthcare Analytics Challenge",
+  "2nd Place — AIS Student Chapter Leadership Conference 2025, Southern Company Challenge",
+  "3rd Place — Prompt Engineers AI Spring 2026 Hackathon",
+  "Winner — UC Davis Graduate School of Management × Financial Times Biz Quiz",
+  "Tata Crucible Business Quiz — Online Winner",
+  "ETV Champion",
+];
+
+export const certifications = [
+  "CompTIA Security+ (SY0-701) Cert Prep: Security Operations",
+  "Planning a Microsoft Azure Solution",
+  "Accenture North America — Data Analytics and Visualization Job Simulation",
+  "Tata Group — Data Analytics Job Simulation",
+  "Introduction to Python",
+];
+
+export const publication = "\u201cSURAKSHA: AI-Driven IT Support and Automation\u201d";
+
+export const leadership = [
+  {
+    org: "Association for Information Systems",
+    role: "Graduate Chair",
+    dates: "Apr 2025 – May 2026",
+    description:
+      "Liaison between graduate students, AIS leadership, and faculty; organized graduate-focused events; shared internship, research, and conference opportunities.",
+  },
+  {
+    org: "Business Analytics Club",
+    role: "Vice President",
+    dates: "Apr 2025 – May 2026",
+    description:
+      "Led the UNT Sports Analytics Hackathon 2025 (95+ students, 34 teams), coordinating officers, sponsors, faculty advisors, and industry partners; hosted speaker sessions on analytics and BI tools including Alteryx.",
+  },
+];
