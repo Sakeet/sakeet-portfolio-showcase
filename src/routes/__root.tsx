@@ -77,16 +77,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sakeet Kopparapu | AI/ML Engineer & Data Scientist" },
-      {
-        name: "description",
-        content:
-          "AI/ML Engineer and Data Scientist. MS Information Systems @ UNT. Building AI and data systems that work at scale.",
-      },
       { name: "author", content: "Sakeet Kopparapu" },
       { property: "og:site_name", content: "Sakeet Kopparapu" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
