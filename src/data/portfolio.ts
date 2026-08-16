@@ -228,6 +228,43 @@ export const projects: Project[] = [
     },
   },
   {
+    title: "Snowflake Platform Evaluation — Wisdom Index Advisors (Capstone)",
+    category: "Data Engineering",
+    hook: "A cloud data platform evaluation delivered to a live client, presented to their leadership team in person.",
+    description:
+      "Evaluated Snowflake as a cloud data platform for Wisdom Index Advisors, a wealth management firm in Prosper, TX, as the capstone project for my MS at UNT's G. Brint Ryan College of Business. Delivered a full recommendation covering platform capabilities, comparable deployments in financial services, a proposed solution architecture spanning data ingestion, storage, processing, and real-time dashboards for both advisors and clients, and a staffing model for implementation. Built tiered cost estimates across three deployment scenarios — Pilot at $381/month, Small Scale at $3,348/month, and Enterprise at $12,683/month — and presented the findings to the client's leadership team in person alongside faculty.",
+    tech: [
+      "Snowflake",
+      "Cloud Data Architecture",
+      "Solution Design",
+      "Cost Modeling",
+      "Vendor Evaluation",
+      "Data Ingestion & Storage",
+      "Real-Time Dashboards",
+      "Stakeholder Presentation",
+    ],
+    impact: "Client leadership attended the presentation in person and is considering Snowflake as a platform for their business.",
+    clientCapstone: true,
+    githubUrl: profile.github,
+    role: "Data & Analytics Consultant",
+    timeline: "Jan 2026 – May 2026",
+    caseStudy: {
+      problem:
+        "Wisdom Index Advisors needed a modern cloud data platform that could unify client and advisor data, support real-time dashboards, and scale with the firm's growth without overengineering the initial deployment.",
+      approach: [
+        "Evaluated Snowflake against the firm's requirements, comparable financial-services deployments, and the college's capstone evaluation rubric.",
+        "Designed a target architecture covering ingestion, storage, processing, and real-time BI dashboards for advisors and clients.",
+        "Built tiered cost estimates for Pilot, Small Scale, and Enterprise deployment scenarios to give leadership a clear decision framework.",
+        "Presented findings, risks, and recommendations directly to the client's leadership team in person alongside faculty advisors.",
+      ],
+      outcome: [
+        "Delivered a complete vendor evaluation and solution recommendation to the client.",
+        "Provided three budget-scaled deployment options with monthly cost estimates.",
+        "Client leadership attended the presentation and is considering Snowflake as a platform for their business.",
+      ],
+    },
+  },
+  {
     title: "SURAKSHA — AI-Driven IT Support & Task Automation",
     category: "AI & GenAI",
     hook: "Intelligent chatbot for IT incident management and automated ticketing.",
