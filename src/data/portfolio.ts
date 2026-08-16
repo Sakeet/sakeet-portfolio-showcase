@@ -166,6 +166,7 @@ export type Project = {
   impact: string;
   award?: boolean;
   githubUrl: string;
+  paperUrl?: string;
   role?: string;
   timeline?: string;
   caseStudy: CaseStudy;
@@ -231,11 +232,23 @@ export const projects: Project[] = [
     hook: "Intelligent chatbot for IT incident management and automated ticketing.",
     description:
       "Integrated with SolarWinds APIs for real-time autonomous workflow execution via natural language.",
-    tech: ["Python", "LLMs", "SolarWinds API", "NLP", "Automation"],
+    tech: [
+      "Model Context Protocol (MCP)",
+      "LLMs (Claude 3.7 Sonnet)",
+      "Federated Learning",
+      "RBAC",
+      "JWT Authentication",
+      "Anomaly Detection",
+      "SolarWinds Service Desk API",
+      "Python",
+      "Prompt Engineering",
+    ],
     impact:
       "2nd prize out of 25+ teams at the AIS 2025 Conference; self-healing mechanisms cut manual troubleshooting effort. Also a published paper.",
     award: true,
     githubUrl: "https://github.com/Sakeet/AI_Driven_IT_Support_System",
+    paperUrl:
+      "https://www.issrj.org/wp-content/uploads/2025/12/SURAKSHA-AI-Driven-IT-Support-and-Automation.pdf",
     role: "AI Engineer",
     timeline: "Research project + published paper",
     caseStudy: {
@@ -456,16 +469,57 @@ export type Credential = {
   name: string;
   type: "program" | "simulation";
   verifyUrl?: string;
+  verified?: boolean;
 };
 
 export const credentials: Credential[] = [
-  { name: "CodePath.org — Foundations of AI Engineering Certificate", type: "program" },
-  { name: "SQL (HackerRank) — Intermediate Certified", type: "program" },
-  { name: "McKinsey.org Forward Program", type: "program" },
-  { name: "Accenture North America — Data Analytics and Visualization Job Simulation", type: "simulation" },
-  { name: "Tata Group — Data Analytics Job Simulation", type: "simulation" },
-  { name: "Deloitte Australia — Data Analytics Job Simulation", type: "simulation" },
-  { name: "CBRE — Project Management Job Simulation", type: "simulation" },
+  {
+    name: "SQL (Intermediate) — HackerRank Verified",
+    type: "program",
+    verified: true,
+    verifyUrl: "https://www.hackerrank.com/certificates/5c31f745d315",
+  },
+  {
+    name: "CodePath.org — Foundations of AI Engineering Certificate",
+    type: "program",
+    verifyUrl: "https://certificates.codepath.org/976164b7-1206-4152-b40f-57b78c117849.pdf",
+  },
+  {
+    name: "McKinsey.org Forward Program",
+    type: "program",
+    verifyUrl:
+      "https://www.credly.com/badges/b0e69f34-3776-4548-a78a-8031886b3762/linked_in_profile",
+  },
+  {
+    name: "2025 SAS Hackathon Participant — issued by SAS",
+    type: "program",
+    verifyUrl:
+      "https://www.credly.com/badges/14f3b571-0b0e-42d2-b86c-7b376d921def/linked_in_profile",
+  },
+  {
+    name: "Accenture North America — Data Analytics & Visualization",
+    type: "simulation",
+    verifyUrl:
+      "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/T6kdcdKSTfg2aotxT/hzmoNKtzvAzXsEqx8_T6kdcdKSTfg2aotxT_2Rxo6LjZS6bD3BJWe_1749696820935_completion_certificate.pdf",
+  },
+  {
+    name: "Tata Group — Data Analytics",
+    type: "simulation",
+    verifyUrl:
+      "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_2Rxo6LjZS6bD3BJWe_1747258418632_completion_certificate.pdf",
+  },
+  {
+    name: "Deloitte Australia — Data Analytics",
+    type: "simulation",
+    verifyUrl:
+      "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_2Rxo6LjZS6bD3BJWe_1747024847657_completion_certificate.pdf",
+  },
+  {
+    name: "CBRE — Project Management",
+    type: "simulation",
+    verifyUrl:
+      "https://www.theforage.com/completion-certificates/PDmHHPmLyCgdQWzdt/STkypM8iMfn4Gk9BF_PDmHHPmLyCgdQWzdt_2Rxo6LjZS6bD3BJWe_1783395369441_completion_certificate.pdf",
+  },
 ];
 
 export const publication = {

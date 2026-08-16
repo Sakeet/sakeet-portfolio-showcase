@@ -69,19 +69,27 @@ export function Achievements() {
               <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
                 Programs & Assessments
               </h4>
-              <ul className="grid gap-4 md:grid-cols-2">
+              <ul className="grid gap-4 sm:grid-cols-2">
                 {programs.map((cert) => (
                   <li key={cert.name} className="glass glow-hover flex flex-col gap-2 rounded-2xl p-5">
                     <div className="flex gap-3">
                       <BadgeCheck className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
-                      <p className="text-sm leading-relaxed">{cert.name}</p>
+                      <div className="flex flex-col gap-2">
+                        <p className="text-sm leading-relaxed">{cert.name}</p>
+                        {cert.verified && (
+                          <span className="inline-flex w-fit items-center gap-1 rounded-full border border-primary/40 bg-primary/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
+                            <BadgeCheck className="size-3" aria-hidden />
+                            Verified
+                          </span>
+                        )}
+                      </div>
                     </div>
                     {cert.verifyUrl && (
                       <a
                         href={cert.verifyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="ml-8 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
+                        className="ml-8 inline-flex w-fit items-center gap-1 text-xs font-semibold text-primary hover:underline"
                       >
                         Verify
                         <ExternalLink className="size-3" aria-hidden />
@@ -99,14 +107,27 @@ export function Achievements() {
               </h4>
               <div className="glass glow-hover rounded-2xl p-5">
                 <div className="flex flex-wrap gap-2">
-                  {simulations.map((sim) => (
-                    <span
-                      key={sim.name}
-                      className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary"
-                    >
-                      {sim.name.replace(" Job Simulation", "").replace(" — ", " — ")}
-                    </span>
-                  ))}
+                  {simulations.map((sim) =>
+                    sim.verifyUrl ? (
+                      <a
+                        key={sim.name}
+                        href={sim.verifyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-border bg-secondary px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground hover:underline"
+                      >
+                        {sim.name}
+                        <ExternalLink className="size-3 opacity-70" aria-hidden />
+                      </a>
+                    ) : (
+                      <span
+                        key={sim.name}
+                        className="inline-flex items-center rounded-full border border-border bg-secondary px-3 py-1.5 text-xs font-medium text-muted-foreground"
+                      >
+                        {sim.name}
+                      </span>
+                    ),
+                  )}
                 </div>
               </div>
             </div>
