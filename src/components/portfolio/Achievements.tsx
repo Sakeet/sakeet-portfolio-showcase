@@ -1,9 +1,13 @@
-import { BadgeCheck, BookOpen, Trophy } from "lucide-react";
+import { BadgeCheck, BookOpen, ExternalLink, Trophy } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
 import { Reveal, SectionHeading } from "./Reveal";
-import { awards, certifications, publication } from "@/data/portfolio";
+import { awards, credentials, publication } from "@/data/portfolio";
 
 export function Achievements() {
+  const programs = credentials.filter((c) => c.type === "program");
+  const simulations = credentials.filter((c) => c.type === "simulation");
+
   return (
     <section id="achievements" className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 md:py-28">
       <SectionHeading
@@ -30,27 +34,84 @@ export function Achievements() {
             </ul>
           </TabsContent>
 
-          <TabsContent value="certs" className="mt-6">
-            <ul className="grid gap-4 md:grid-cols-2">
-              {certifications.map((cert) => (
-                <li key={cert} className="glass glow-hover flex gap-3 rounded-2xl p-5">
-                  <BadgeCheck className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
-                  <p className="text-sm leading-relaxed">{cert}</p>
-                </li>
-              ))}
-            </ul>
+          <TabsContent value="certs" className="mt-6 space-y-6">
+            {/* Featured publication */}
+            <div className="relative overflow-hidden rounded-2xl border-l-4 border-primary bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-6 sm:p-8">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5">
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <BookOpen className="size-6" aria-hidden />
+                </div>
+                <div className="flex-1 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-primary">Publication</p>
+                    <h3 className="mt-1 text-xl font-bold sm:text-2xl">{publication.title}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{publication.venue}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">Co-authors: {publication.coAuthors}</p>
+                  </div>
+                  <p className="max-w-3xl text-sm leading-relaxed sm:text-base">{publication.summary}</p>
+                  <Button asChild variant="default" size="sm" className="w-fit gap-2">
+                    <a
+                      href={publication.paperUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Read the SURAKSHA paper (opens in new tab)"
+                    >
+                      Read the Paper
+                      <ExternalLink className="size-4" aria-hidden />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Programs & Assessments */}
+            <div>
+              <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                Programs & Assessments
+              </h4>
+              <ul className="grid gap-4 md:grid-cols-2">
+                {programs.map((cert) => (
+                  <li key={cert.name} className="glass glow-hover flex flex-col gap-2 rounded-2xl p-5">
+                    <div className="flex gap-3">
+                      <BadgeCheck className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
+                      <p className="text-sm leading-relaxed">{cert.name}</p>
+                    </div>
+                    {cert.verifyUrl && (
+                      <a
+                        href={cert.verifyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ml-8 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
+                      >
+                        Verify
+                        <ExternalLink className="size-3" aria-hidden />
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Job Simulations */}
+            <div>
+              <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                Job Simulations (Forage)
+              </h4>
+              <div className="glass glow-hover rounded-2xl p-5">
+                <div className="flex flex-wrap gap-2">
+                  {simulations.map((sim) => (
+                    <span
+                      key={sim.name}
+                      className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary"
+                    >
+                      {sim.name.replace(" Job Simulation", "").replace(" — ", " — ")}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </TabsContent>
         </Tabs>
-      </Reveal>
-
-      <Reveal className="mt-6">
-        <div className="glass flex gap-3 rounded-2xl p-5">
-          <BookOpen className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
-          <p className="text-sm leading-relaxed">
-            <span className="font-semibold">Publication: </span>
-            {publication}
-          </p>
-        </div>
       </Reveal>
     </section>
   );
