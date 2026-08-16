@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 
 export function Experience() {
   return (
-    <section id="experience" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
+    <section id="experience" className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 md:py-28">
       <SectionHeading
         label="Experience"
         title="Where I've done the work."
@@ -21,16 +21,16 @@ export function Experience() {
       <div className="relative">
         <div
           aria-hidden
-          className="gradient-bg absolute top-0 bottom-0 left-4 w-px opacity-40 md:left-1/2"
+          className="gradient-bg absolute top-0 bottom-0 left-3 w-px opacity-40 md:left-1/2"
         />
-        <ol className="space-y-10">
+        <ol className="space-y-6 sm:space-y-10">
           {experiences.map((exp, i) => {
             const right = i % 2 === 1;
             return (
-              <li key={exp.company} className="relative pl-12 md:grid md:grid-cols-2 md:gap-10 md:pl-0">
+              <li key={exp.company} className="relative pl-10 sm:pl-12 md:grid md:grid-cols-2 md:gap-10 md:pl-0">
                 <span
                   aria-hidden
-                  className="gradient-bg absolute top-6 left-4 flex size-8 -translate-x-1/2 items-center justify-center rounded-full ring-4 ring-background md:left-1/2"
+                  className="gradient-bg absolute top-5 left-3 flex size-7 sm:top-6 sm:size-8 -translate-x-1/2 items-center justify-center rounded-full ring-4 ring-background md:left-1/2"
                 >
                   <Building2 className="size-4 text-primary-foreground" />
                 </span>
@@ -40,7 +40,7 @@ export function Experience() {
                     right ? "md:col-start-2 md:pl-10" : "md:pr-10 md:text-right",
                   )}
                 >
-                  <article className="glass glow-hover rounded-2xl p-6">
+                  <article className="glass glow-hover rounded-2xl p-5 sm:p-6">
                     <h3 className="text-lg font-semibold">{exp.company}</h3>
                     <p className="mt-1 text-sm font-medium text-primary">{exp.role}</p>
                     <div

@@ -40,7 +40,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
+    <section id="contact" className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 md:py-28">
       <SectionHeading
         label="Contact"
         title="Let's build something that actually matters."
@@ -85,7 +85,7 @@ export function Contact() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <form onSubmit={onSubmit} className="glass space-y-4 rounded-2xl p-6" noValidate>
+          <form onSubmit={onSubmit} className="glass space-y-4 rounded-2xl p-5 sm:p-6" noValidate>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>

@@ -5,7 +5,7 @@ import { awards, certifications, publication } from "@/data/portfolio";
 
 export function Achievements() {
   return (
-    <section id="achievements" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
+    <section id="achievements" className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 md:py-28">
       <SectionHeading
         label="Achievements"
         title="Recognition & credentials."
