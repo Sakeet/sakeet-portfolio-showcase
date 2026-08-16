@@ -25,6 +25,16 @@ export function Reveal({
   );
 }
 
+const sectionNumbers: Record<string, string> = {
+  About: "01",
+  Experience: "02",
+  Projects: "03",
+  Research: "04",
+  Skills: "05",
+  Achievements: "06",
+  Contact: "07",
+};
+
 export function SectionHeading({
   label,
   title,
@@ -34,9 +44,12 @@ export function SectionHeading({
   title: string;
   subtitle?: string;
 }) {
+  const number = sectionNumbers[label] ?? label;
   return (
     <Reveal className="mb-10 max-w-2xl md:mb-14">
-      <p className="section-label">{label}</p>
+      <p className="text-xs font-semibold tracking-[0.22em] text-primary/60 uppercase">
+        {number} / {label}
+      </p>
       <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
         <span className="gradient-text">{title}</span>
       </h2>
