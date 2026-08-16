@@ -9,6 +9,23 @@ const iconByType: Record<ResearchEntry["type"], typeof BookOpen> = {
   "Showcase Selection": Sparkles,
 };
 
+function AuthorList({ authors }: { authors?: { name: string; isMe?: boolean }[] }) {
+  if (!authors || authors.length === 0) return null;
+  return (
+    <p className="mt-1 text-sm text-muted-foreground">
+      <span className="text-foreground/80">Authors:</span>{" "}
+      {authors.map((author, idx) => (
+        <span key={author.name}>
+          <span className={author.isMe ? "font-medium text-primary/90" : undefined}>
+            {author.name}
+          </span>
+          {idx < authors.length - 1 ? ", " : null}
+        </span>
+      ))}
+    </p>
+  );
+}
+
 export function Research() {
   return (
     <section id="research" className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 md:py-28">
@@ -37,11 +54,7 @@ export function Research() {
                         {entry.title}
                       </h3>
                       <p className="mt-1 text-sm italic text-muted-foreground">{entry.venue}</p>
-                      {entry.coAuthors ? (
-                        <p className="mt-1 text-sm text-muted-foreground">
-                          Co-authors: {entry.coAuthors}
-                        </p>
-                      ) : null}
+                      <AuthorList authors={entry.authors} />
                     </div>
                     <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
                       {entry.summary}
