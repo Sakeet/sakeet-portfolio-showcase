@@ -288,6 +288,7 @@ export const projects: Project[] = [
     impact:
       "2nd prize out of 25+ teams at the AIS 2025 Conference; self-healing mechanisms cut manual troubleshooting effort. Also a published paper.",
     award: true,
+    publishedResearch: true,
     githubUrl: "https://github.com/Sakeet/AI_Driven_IT_Support_System",
     paperUrl:
       "https://www.issrj.org/wp-content/uploads/2025/12/SURAKSHA-AI-Driven-IT-Support-and-Automation.pdf",
