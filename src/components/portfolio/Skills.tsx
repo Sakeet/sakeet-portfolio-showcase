@@ -2,8 +2,9 @@ import {
   BarChart3,
   Brain,
   Briefcase,
-  Code2,
+  Cloud,
   Database,
+  LineChart,
   Server,
   type LucideIcon,
 } from "lucide-react";
