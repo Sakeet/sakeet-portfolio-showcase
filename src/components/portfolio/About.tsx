@@ -63,7 +63,7 @@ export function About() {
               {i === 0 ? (
                 <HighlightedParagraph text={para} />
               ) : (
-                <p>{para}</p>
+                <p className="text-base leading-relaxed text-muted-foreground">{para}</p>
               )}
             </Reveal>
           ))}
