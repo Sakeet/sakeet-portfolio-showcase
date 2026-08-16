@@ -128,8 +128,8 @@ function CaseStudyModal({
 
               <div className="mt-8 flex flex-wrap gap-2 border-t border-border pt-6">
                 <Button size="sm" asChild>
-                  <a href={project.github ?? profile.github} target="_blank" rel="noreferrer">
-                    <Github className="size-3.5" /> View code
+                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                    <Github className="size-3.5" /> View on GitHub
                   </a>
                 </Button>
                 <Button size="sm" variant="ghost" onClick={() => onOpenChange(false)}>

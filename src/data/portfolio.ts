@@ -180,7 +180,7 @@ export const projects: Project[] = [
       "Built with OpenAI Whisper and Meta SeamlessM4T routed through a virtual audio device so no call data leaves the premises.",
     tech: ["Python", "Whisper", "SeamlessM4T", "Audio Pipelines", "On-Prem Deployment"],
     impact: "Production-ready in 8 weeks with a 5-person team.",
-    github: profile.github,
+    githubUrl: profile.github,
     role: "AI Engineer, 5-person team",
     timeline: "8 weeks",
     caseStudy: {
@@ -208,7 +208,7 @@ export const projects: Project[] = [
     impact:
       "1 of 6 teams worldwide selected for the \u201cRising Stars in Data and AI\u201d showcase at SAS Innovate 2026.",
     award: true,
-    github: profile.github,
+    githubUrl: "https://github.com/Sakeet/SAS_Curiosity_Cup",
     role: "Data Scientist",
     timeline: "Competition project",
     caseStudy: {
@@ -235,7 +235,7 @@ export const projects: Project[] = [
     impact:
       "2nd prize out of 25+ teams at the AIS 2025 Conference; self-healing mechanisms cut manual troubleshooting effort. Also a published paper.",
     award: true,
-    github: profile.github,
+    githubUrl: "https://github.com/Sakeet/AI_Driven_IT_Support_System",
     role: "AI Engineer",
     timeline: "Research project + published paper",
     caseStudy: {
@@ -262,7 +262,7 @@ export const projects: Project[] = [
     tech: ["Python", "Pandas", "Data Visualization", "Statistical Analysis"],
     impact: "Top 6 nationwide finalist out of 25+ university teams.",
     award: true,
-    github: profile.github,
+    githubUrl: profile.github,
     role: "Analytics lead",
     timeline: "National case competition",
     caseStudy: {
@@ -288,7 +288,7 @@ export const projects: Project[] = [
     tech: ["Python", "LLMs", "Database Design", "Recommendation Systems"],
     impact: "3rd place out of 18 teams.",
     award: true,
-    github: profile.github,
+    githubUrl: profile.github,
     role: "Data & backend architecture",
     timeline: "5-week hackathon",
     caseStudy: {
@@ -313,7 +313,7 @@ export const projects: Project[] = [
       "A centralized Google Sheets reporting layer acts as a lightweight BI dashboard for non-technical users.",
     tech: ["Python", "SQL", "Voice AI", "Google Sheets API"],
     impact: "End-to-end product from data capture to user-facing reporting.",
-    github: profile.github,
+    githubUrl: profile.github,
     role: "Solo build",
     timeline: "Side project",
     caseStudy: {
@@ -337,7 +337,7 @@ export const projects: Project[] = [
     description: "Validated source-to-target mappings across multiple enterprise systems.",
     tech: ["SQL Server", "SSIS", "T-SQL", "ETL", "Data Validation"],
     impact: "100K+ records/week at 99%+ accuracy.",
-    github: profile.github,
+    githubUrl: profile.github,
     role: "Associate Consultant",
     timeline: "14 months",
     caseStudy: {
