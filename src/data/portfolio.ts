@@ -453,8 +453,6 @@ export const awards = [
 ];
 
 export const certifications = [
-  "CompTIA Security+ (SY0-701) Cert Prep: Security Operations",
-  "Planning a Microsoft Azure Solution",
   "Accenture North America — Data Analytics and Visualization Job Simulation",
   "Tata Group — Data Analytics Job Simulation",
   "Introduction to Python",
