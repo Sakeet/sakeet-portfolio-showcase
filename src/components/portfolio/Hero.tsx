@@ -49,7 +49,7 @@ export function Hero() {
 
   return (
     <section id="home" className="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28">
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
         <div className="mesh-aurora" />
         <div className="grid-pattern absolute inset-0 opacity-40 [mask-image:radial-gradient(70%_60%_at_50%_35%,black,transparent)]" />
         <div
@@ -71,7 +71,7 @@ export function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background" />
       </div>
 
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 md:grid-cols-[1.3fr_1fr]">
+      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 md:grid-cols-[1.3fr_1fr]">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
