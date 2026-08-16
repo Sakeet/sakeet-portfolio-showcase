@@ -127,11 +127,13 @@ function CaseStudyModal({
               </section>
 
               <div className="mt-8 flex flex-wrap gap-2 border-t border-border pt-6">
-                <Button size="sm" asChild>
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    <Github className="size-3.5" /> View on GitHub
-                  </a>
-                </Button>
+                {!project.hideGithub ? (
+                  <Button size="sm" asChild>
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Github className="size-3.5" /> View on GitHub
+                    </a>
+                  </Button>
+                ) : null}
                 {project.paperUrl ? (
                   <Button size="sm" variant="outline" asChild>
                     <a href={project.paperUrl} target="_blank" rel="noopener noreferrer">
@@ -239,16 +241,18 @@ export function Projects() {
                 <p className="mt-4 text-sm font-medium text-primary">{project.impact}</p>
 
                 <div className="mt-5 flex flex-wrap items-center gap-2">
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    asChild
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="size-3.5" /> View on GitHub
-                    </a>
-                  </Button>
+                  {!project.hideGithub ? (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      asChild
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="size-3.5" /> View on GitHub
+                      </a>
+                    </Button>
+                  ) : null}
                   {project.paperUrl ? (
                     <Button size="sm" variant="outline" asChild onClick={(e) => e.stopPropagation()}>
                       <a href={project.paperUrl} target="_blank" rel="noopener noreferrer">
