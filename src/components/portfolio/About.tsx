@@ -1,7 +1,33 @@
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
+import { BookOpen, GraduationCap, Languages, MapPin, Target } from "lucide-react";
 import { Reveal, SectionHeading } from "./Reveal";
 import { aboutNarrative, quickFacts, stats } from "@/data/portfolio";
+
+const factIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  "map-pin": MapPin,
+  "graduation-cap": GraduationCap,
+  "book-open": BookOpen,
+  target: Target,
+  languages: Languages,
+};
+
+const HIGHLIGHTED_PHRASE =
+  "the smartest AI in the world is useless if the data going into it is wrong";
+
+function HighlightedParagraph({ text }: { text: string }) {
+  const idx = text.indexOf(HIGHLIGHTED_PHRASE);
+  if (idx === -1) return <p className="text-base leading-relaxed text-muted-foreground">{text}</p>;
+  const before = text.slice(0, idx);
+  const after = text.slice(idx + HIGHLIGHTED_PHRASE.length);
+  return (
+    <p className="text-base leading-relaxed text-muted-foreground">
+      {before}
+      <span className="gradient-text font-medium">{HIGHLIGHTED_PHRASE}</span>
+      {after}
+    </p>
+  );
+}
 
 function Counter({ value }: { value: number }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -30,11 +56,15 @@ export function About() {
     <section id="about" className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 md:py-28">
       <SectionHeading label="About" title="Data first, then AI." />
 
-      <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
-        <div className="space-y-5">
+      <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr]">
+        <div className="space-y-6">
           {aboutNarrative.map((para, i) => (
             <Reveal key={i} delay={i * 0.08}>
-              <p className="text-base leading-relaxed text-muted-foreground">{para}</p>
+              {i === 0 ? (
+                <HighlightedParagraph text={para} />
+              ) : (
+                <p className="text-base leading-relaxed text-muted-foreground">{para}</p>
+              )}
             </Reveal>
           ))}
         </div>
@@ -42,23 +72,31 @@ export function About() {
         <Reveal delay={0.15}>
           <div className="glass glow-hover rounded-2xl p-5 sm:p-6">
             <h3 className="section-label">Quick facts</h3>
-            <dl className="mt-5 space-y-4">
-              {quickFacts.map((fact) => (
-                <div key={fact.label}>
-                  <dt className="text-xs font-semibold tracking-wide text-primary">
-                    {fact.label}
-                  </dt>
-                  <dd className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                    {fact.value}
-                  </dd>
-                </div>
-              ))}
+            <dl className="mt-6 space-y-5">
+              {quickFacts.map((fact) => {
+                const Icon = factIcons[fact.icon];
+                return (
+                  <div key={fact.label} className="flex items-start gap-3">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      {Icon && <Icon className="h-4 w-4" />}
+                    </div>
+                    <div>
+                      <dt className="text-xs font-semibold tracking-wide text-primary">
+                        {fact.label}
+                      </dt>
+                      <dd className="mt-0.5 text-sm leading-relaxed text-muted-foreground">
+                        {fact.value}
+                      </dd>
+                    </div>
+                  </div>
+                );
+              })}
             </dl>
           </div>
         </Reveal>
       </div>
 
-      <div className="mt-14 grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <div className="mt-16 grid grid-cols-2 gap-4 lg:grid-cols-4">
         {stats.map((stat, i) => (
           <Reveal key={stat.label} delay={i * 0.08}>
             <div className="glass glow-hover h-full rounded-2xl p-5 text-center">

@@ -27,27 +27,31 @@ export const navLinks = [
 ];
 
 export const aboutNarrative = [
-  "I started my career at Capgemini, spending 14 months doing the work that makes everything else possible — building ETL pipelines, validating datasets, and making sure 1,000+ employees got accurate payroll and workforce reports every single week. It wasn't flashy, but it taught me the lesson that still shapes how I work: the smartest AI system in the world is only as good as the data flowing into it.",
-  "That mindset carried into machine learning and generative AI. Instead of treating data as an afterthought, I design for it from the start — whether that's leading a 10-member team building an AI-driven real estate platform, architecting RAG and OCR pipelines for document extraction, or building a real-time translation system so no 911 emergency call gets lost in a language barrier.",
-  "What I bring is the full stack of AI and data work — not just modeling. Database schemas, prompt engineering, dashboards in Tableau and Power BI, and leading cross-functional teams through ambiguous technical problems.",
+  "My first job was at Capgemini. For 14 months, I built data pipelines and checked datasets so that 1,000 employees got the right payroll every week. It taught me something I still believe: the smartest AI in the world is useless if the data going into it is wrong.",
+  "So when I moved into machine learning, I did not treat data as an afterthought. I plan for it from day one.",
+  "That approach has taken me to some interesting places. I led a team of 10 people building an AI platform for real estate. I helped build FirstVox, a translation system for 911 dispatchers that works in real time and never sends a call over the internet - so a language barrier never costs someone help. I built a model on 130 hospitals worth of data that showed how to free up 8 to 12 beds a day.",
+  "I do not only build models. I design databases, write prompts, build dashboards in Tableau and Power BI, and lead teams through problems that start out messy and undefined.",
+  "I recently finished my MS in Information Systems at the University of North Texas, where I also taught 200+ students as a teaching assistant. I am now looking for work in Analyst, Data Scientist, Machine Learning Engineer, Analytics Engineer, Business Intelligence Engineer, AI Consultant (Entry Level), AI Solutions Engineering,  AI Product Management, and AI engineering — full-time, internship, or co-op.",
+  "If you are building something that has to work at scale and actually matter, I would like to hear about it.",
 ];
 
 export const quickFacts = [
-  { label: "Location", value: "Plano, TX (open to relocate)" },
+  { label: "Location", value: "Plano, TX (open to relocate)", icon: "map-pin" },
   {
     label: "Education",
-    value: "MS Information Systems & Technologies, UNT — GPA 3.6/4",
+    value: "MS Information Systems & Technologies, University of North Texas — GPA 3.6/4",
+    icon: "graduation-cap",
   },
-  { label: "Undergrad", value: "BTech Computer Science, Amrita Vishwa Vidyapeetham" },
-  { label: "Focus", value: "AI/ML Engineering, Data Science, Analytics" },
-  { label: "Languages", value: "Telugu, Hindi, English, Tamil" },
+  { label: "Undergrad", value: "BTech Computer Science, Amrita Vishwa Vidyapeetham", icon: "book-open" },
+  { label: "Focus", value: "AI/ML Engineering, Data Science, Analytics", icon: "target" },
+  { label: "Languages", value: "Telugu, Hindi, English, Tamil", icon: "languages" },
 ];
 
 export const stats = [
   { value: 100, suffix: "K+", label: "records processed weekly" },
   { value: 200, suffix: "+", label: "students taught as TA" },
-  { value: 10, suffix: "-member", label: "team led" },
-  { value: 6, suffix: "", label: "hackathons & national competitions placed in" },
+  { value: 10, suffix: "", label: "person team led" },
+  { value: 6, suffix: "", label: "hackathons and national competitions placed in" },
 ];
 
 export type Experience = {
