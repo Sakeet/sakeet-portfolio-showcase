@@ -287,7 +287,6 @@ export const projects: Project[] = [
     github: profile.github,
     role: "Data & backend architecture",
     timeline: "5-week hackathon",
-    caseThatDoesNotExist: undefined as never,
     caseStudy: {
       problem:
         "Early-stage founders and investors waste cycles on mismatched intros because there is no structured signal connecting thesis, stage, and sector.",
