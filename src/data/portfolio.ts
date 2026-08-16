@@ -450,7 +450,6 @@ export const awards = [
   "1 of 6 Teams Worldwide — \u201cRising Stars in Data and AI,\u201d SAS Innovate 2026",
   "Top 6 Finalist Internationally — HCA Healthcare Analytics Challenge, AIS SCLC 2025",
   "Tata Crucible Business Quiz — Qualified Round 1 & Completed Round 2 Prelims",
-  "ETV Champion",
 ];
 
 export const certifications = [
