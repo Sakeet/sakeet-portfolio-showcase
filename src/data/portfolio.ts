@@ -210,6 +210,7 @@ export const projects: Project[] = [
     role: "AI Engineer, 5-person team",
     timeline: "8 weeks",
     caseStudy: {
+      owned: [],
       problem:
         "911 dispatchers lose critical minutes when a caller does not speak English, and cloud translation services are off the table because emergency call audio cannot leave the premises.",
       approach: [
@@ -238,6 +239,7 @@ export const projects: Project[] = [
     role: "Data Scientist",
     timeline: "Competition project",
     caseStudy: {
+      owned: [],
       problem:
         "Hospitals cannot plan capacity without knowing how long patients will stay, so beds sit blocked while admissions queue up.",
       approach: [
@@ -274,6 +276,7 @@ export const projects: Project[] = [
     role: "Data & Analytics Consultant",
     timeline: "Jan 2026 – May 2026",
     caseStudy: {
+      owned: [],
       problem:
         "Wisdom Index Advisors needed a modern cloud data platform that could unify client and advisor data, support real-time dashboards, and scale with the firm's growth without overengineering the initial deployment.",
       approach: [
@@ -316,6 +319,7 @@ export const projects: Project[] = [
     role: "AI Engineer",
     timeline: "Research project + published paper",
     caseStudy: {
+      owned: [],
       problem:
         "IT teams burn hours on repetitive incidents — triaging tickets, checking monitors, and running the same remediation steps by hand.",
       approach: [
@@ -342,6 +346,7 @@ export const projects: Project[] = [
     role: "Analytics lead",
     timeline: "International case competition",
     caseStudy: {
+      owned: [],
       problem:
         "HCA needed to understand what actually drives clinician burnout and attrition across a very large, deidentified workforce dataset.",
       approach: [
@@ -368,6 +373,7 @@ export const projects: Project[] = [
     role: "Data & backend architecture",
     timeline: "5-week hackathon",
     caseStudy: {
+      owned: [],
       problem:
         "Early-stage founders and investors waste cycles on mismatched intros because there is no structured signal connecting thesis, stage, and sector.",
       approach: [
@@ -403,6 +409,7 @@ export const projects: Project[] = [
     role: "Solo build",
     timeline: "Aug 2025 – May 2026",
     caseStudy: {
+      owned: [],
       problem:
         "Small service businesses miss calls all day and have no way to tell which missed callers were ready to buy and which can wait.",
       approach: [
