@@ -8,7 +8,7 @@ export const profile = {
     "I didn't start in AI. I started in data — and that's why my AI actually works.",
   subline:
     "MS in Information Systems & Technologies @ University of North Texas (May 2026) · Plano, TX · Open to relocate",
-  availability: "Open to Full-Time & Internship Opportunities",
+  availability: "Open to Full-Time, Internship & Co-op Opportunities",
   email: "sakeetkopparapu332@gmail.com",
   location: "Plano, TX (open to relocate)",
   linkedin: "https://www.linkedin.com/in/kopparapu-sakeet/",
