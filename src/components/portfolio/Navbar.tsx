@@ -107,6 +107,9 @@ export function Navbar() {
               download="Sakeet_Kopparapu_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent("resume_download", { location: "navbar", file_name: RESUME_URL })
+              }
             >
               Resume
             </a>

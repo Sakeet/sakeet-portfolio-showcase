@@ -115,6 +115,9 @@ export function Hero() {
                 download="Sakeet_Kopparapu_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent("resume_download", { location: "hero", file_name: RESUME_URL })
+                }
               >
                 <Download className="size-4" /> Download Resume
               </a>

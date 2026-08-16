@@ -53,6 +53,12 @@ export function Research() {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label="Read the SURAKSHA paper (opens in new tab)"
+                          onClick={() =>
+                            trackEvent("publication_click", {
+                              link_url: entry.paperUrl,
+                              publication_title: entry.title,
+                            })
+                          }
                         >
                           Read the Paper
                           <ExternalLink className="size-4" aria-hidden />
