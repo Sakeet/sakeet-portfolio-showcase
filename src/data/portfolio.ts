@@ -445,7 +445,7 @@ export const skillGroups = [
 export const awards = [
   "2nd Place — AIS Student Chapter Leadership Conference 2025, Southern Company Challenge",
   "3rd Place — Prompt Engineers AI Spring 2026 Hackathon",
-  "Winner — UC Davis Graduate School of Management × Financial Times Biz Quiz",
+  "Winner — UC Davis Graduate School of Management × Financial Times Biz Quiz 2024",
   "Top 6 Worldwide — AIS SCLC 2026, Microsoft & James Elliott Cybersecurity Challenge",
   "1 of 6 Teams Worldwide — \u201cRising Stars in Data and AI,\u201d SAS Innovate 2026",
   "Top 6 Finalist Internationally — HCA Healthcare Analytics Challenge",
