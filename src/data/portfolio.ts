@@ -330,30 +330,6 @@ export const projects: Project[] = [
       ],
     },
   },
-  {
-    title: "Enterprise Workforce Data Pipeline @ Capgemini",
-    category: "Data Engineering",
-    hook: "SQL stored procedures and SSIS ETL pipelines for employee data integration and migration.",
-    description: "Validated source-to-target mappings across multiple enterprise systems.",
-    tech: ["SQL Server", "SSIS", "T-SQL", "ETL", "Data Validation"],
-    impact: "100K+ records/week at 99%+ accuracy.",
-    githubUrl: profile.github,
-    role: "Associate Consultant",
-    timeline: "14 months",
-    caseStudy: {
-      problem:
-        "Payroll and workforce reporting for 1,000+ employees depended on data spread across multiple enterprise systems with inconsistent definitions.",
-      approach: [
-        "Built SSIS ETL pipelines and T-SQL stored procedures to integrate and migrate employee data between systems.",
-        "Documented and validated source-to-target mappings so every field had a traceable origin.",
-        "Added data-quality checks at load time to catch breakage before it reached downstream reports.",
-      ],
-      outcome: [
-        "100K+ records processed weekly at 99%+ accuracy.",
-        "Accurate payroll and workforce reports delivered on a reliable weekly cadence.",
-      ],
-    },
-  },
 ];
 
 export const skillGroups = [
