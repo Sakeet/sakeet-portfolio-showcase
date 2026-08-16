@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import { BookOpen, GraduationCap, Languages, MapPin, Target } from "lucide-react";
 import { Reveal, SectionHeading } from "./Reveal";
-import { aboutNarrative, quickFacts, stats } from "@/data/portfolio";
+import { aboutNarrative, quickFacts, stats, researchHighlights } from "@/data/portfolio";
 
 const factIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   "map-pin": MapPin,
@@ -96,21 +96,51 @@ export function About() {
         </Reveal>
       </div>
 
-      <div className="mt-16 grid grid-cols-2 gap-4 lg:grid-cols-4">
-        {stats.map((stat, i) => (
-          <Reveal key={stat.label} delay={i * 0.08}>
-            <div className="glass glow-hover h-full rounded-2xl p-5 text-center">
-              <p className="text-3xl font-bold sm:text-4xl">
-                <span className="gradient-text">
+      <div className="mt-16 space-y-8">
+        {/* Primary highlights — link to Research */}
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {researchHighlights.map((item, i) => (
+            <Reveal key={item.label} delay={i * 0.08}>
+              <a
+                href="#research"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("research")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+                className="glass glow-hover block h-full rounded-2xl p-5 text-center transition-colors hover:bg-primary/5"
+              >
+                <p className="text-lg font-bold sm:text-xl lg:text-2xl">
+                  <span className="gradient-text">{item.label}</span>
+                </p>
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                  {item.subLabel}
+                </p>
+              </a>
+            </Reveal>
+          ))}
+        </div>
+
+        <div className="mx-auto h-px w-full max-w-md bg-gradient-to-r from-transparent via-border to-transparent" />
+
+        {/* Secondary counters */}
+        <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          {stats.map((stat, i) => (
+            <Reveal key={stat.label} delay={i * 0.08}>
+            <div className="text-center sm:px-6 lg:px-10">
+                <p className="text-xl font-bold text-foreground/90 sm:text-2xl lg:text-xl">
                   <Counter value={stat.value} />
                   {stat.suffix}
-                </span>
-              </p>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{stat.label}</p>
-            </div>
-          </Reveal>
-        ))}
+                </p>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground/70 sm:text-sm">
+                  {stat.label}
+                </p>
+              </div>
+
+            </Reveal>
+          ))}
+        </div>
       </div>
+
     </section>
   );
 }
