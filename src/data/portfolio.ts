@@ -337,8 +337,10 @@ export const skillGroups = [
     icon: "brain",
     skills: [
       "LLMs",
+      "Generative AI",
       "Retrieval-Augmented Generation (RAG)",
       "Prompt Engineering",
+      "Model Building",
       "Scikit-learn",
       "Feature Engineering",
       "Model Evaluation",
