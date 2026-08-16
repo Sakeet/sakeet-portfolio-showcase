@@ -457,7 +457,6 @@ export const skillGroups = [
       "Feature Engineering",
       "Model Evaluation",
       "Predictive Modeling",
-      "Multi-Criteria Decision Analysis (MCDA)",
       "Sentiment Analysis",
       "Decision Modeling",
     ],
@@ -475,7 +474,6 @@ export const skillGroups = [
       "Data Preprocessing",
       "Data Validation",
       "Data Quality",
-      "Data Migration",
     ],
   },
   {
