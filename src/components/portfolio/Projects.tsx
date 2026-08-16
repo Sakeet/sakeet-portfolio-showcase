@@ -132,6 +132,13 @@ function CaseStudyModal({
                     <Github className="size-3.5" /> View on GitHub
                   </a>
                 </Button>
+                {project.paperUrl ? (
+                  <Button size="sm" variant="outline" asChild>
+                    <a href={project.paperUrl} target="_blank" rel="noopener noreferrer">
+                      <BookOpen className="size-3.5" /> Read the Paper
+                    </a>
+                  </Button>
+                ) : null}
                 <Button size="sm" variant="ghost" onClick={() => onOpenChange(false)}>
                   Close
                 </Button>
