@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Github, Linkedin, Mail, PenLine } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { profile } from "@/data/portfolio";
+import { profile, RESUME_URL } from "@/data/portfolio";
 import profileAsset from "@/assets/profile.jpg.asset.json";
 
 function useTypewriter(words: string[]) {
@@ -107,7 +107,12 @@ export function Hero() {
               View My Work <ArrowDown className="size-4" />
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <a href={profile.resume} download>
+              <a
+                href={RESUME_URL}
+                download="Sakeet_Kopparapu_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Download className="size-4" /> Download Resume
               </a>
             </Button>

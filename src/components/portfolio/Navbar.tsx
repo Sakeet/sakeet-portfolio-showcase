@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { navLinks, profile } from "@/data/portfolio";
+import { navLinks, profile, RESUME_URL } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 
 function useTheme() {
@@ -102,7 +102,12 @@ export function Navbar() {
             {dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
           </Button>
           <Button asChild size="sm" className="hidden sm:inline-flex">
-            <a href={profile.resume} download>
+            <a
+              href={RESUME_URL}
+              download="Sakeet_Kopparapu_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Resume
             </a>
           </Button>
