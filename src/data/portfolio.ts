@@ -468,6 +468,8 @@ export const skillGroups = [
       "SQL",
       "Python",
       "SAS Viya",
+      "Jupyter Notebook",
+      "Colab Notebook",
       "Data Modeling",
       "Exploratory Data Analysis",
       "Data Cleaning",
