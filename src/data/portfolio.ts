@@ -387,9 +387,13 @@ export const skillGroups = [
       "Salesforce",
       "Linux",
       "SSH",
+      "Shell Scripting",
       "Git",
       "Azure",
       "Google Cloud",
+      "HTML",
+      "CSS",
+      "JavaScript",
     ],
   },
   {
