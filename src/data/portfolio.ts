@@ -16,6 +16,13 @@ export const profile = {
   resume: "/resume.pdf",
 };
 
+export const currently = {
+  label: "Currently",
+  status: "Building agentic AI workflows",
+  detail:
+    "Finishing my MS capstone and shipping RAG + LLM experiments on GitHub.",
+};
+
 export const navLinks = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
