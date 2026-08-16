@@ -624,11 +624,17 @@ export const publication = {
     "https://www.issrj.org/wp-content/uploads/2025/12/SURAKSHA-AI-Driven-IT-Support-and-Automation.pdf",
 };
 
+export type ResearchAuthor = {
+  name: string;
+  /** Marks the portfolio owner so the UI can emphasize their name. */
+  isMe?: boolean;
+};
+
 export type ResearchEntry = {
   type: "Publication" | "Conference Presentation" | "Showcase Selection";
   title: string;
   venue: string;
-  coAuthors?: string;
+  authors?: ResearchAuthor[];
   summary: string;
   paperUrl?: string;
 };
