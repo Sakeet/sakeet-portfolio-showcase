@@ -2,6 +2,7 @@ import { BookOpen, ExternalLink, Presentation, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal, SectionHeading } from "./Reveal";
 import { researchEntries, type ResearchEntry } from "@/data/portfolio";
+import { trackEvent } from "@/lib/analytics";
 
 const iconByType: Record<ResearchEntry["type"], typeof BookOpen> = {
   Publication: BookOpen,

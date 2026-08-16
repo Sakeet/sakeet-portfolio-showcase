@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { navLinks, profile, RESUME_URL } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics";
 
 function useTheme() {
   const [dark, setDark] = useState(true);
