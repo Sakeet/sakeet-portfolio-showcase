@@ -246,6 +246,7 @@ export const projects: Project[] = [
     ],
     impact: "Client leadership attended the presentation in person and is considering Snowflake as a platform for their business.",
     clientCapstone: true,
+    hideGithub: true,
     githubUrl: profile.github,
     role: "Data & Analytics Consultant",
     timeline: "Jan 2026 – May 2026",
