@@ -37,7 +37,7 @@ export function Navbar() {
     const onScroll = () => {
       setScrolled(window.scrollY > 24);
       const offset = window.scrollY + 120;
-      let current = navLinks[0].id;
+      let current = navLinks[0]?.id ?? "home";
       for (const link of navLinks) {
         const el = document.getElementById(link.id);
         if (el && el.offsetTop <= offset) current = link.id;
