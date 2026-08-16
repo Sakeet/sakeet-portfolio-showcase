@@ -201,7 +201,7 @@
   position: absolute;
   border-radius: 50%;
   filter: blur(90px) saturate(130%);
-  opacity: 0.3;
+  opacity: 0.14;
   animation: mesh-drift 22s ease-in-out infinite;
   transform: translateZ(0);
 }
@@ -233,7 +233,7 @@
     color-mix(in oklab, var(--teal) 60%, transparent)
   );
   filter: blur(90px);
-  opacity: 0.18;
+  opacity: 0.09;
   animation: aurora-sweep 28s linear infinite;
 }
 
